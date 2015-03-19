@@ -1,5 +1,5 @@
-gesturesApp.controller('menu.controller', ['modes.modesService', '$scope', function(modesService, $scope) {
+gesturesApp.controller('menu.menu.controller', ['game.modes.modes.service', function(modesService) {
 
-    $scope.modes = modesService.getModes();
+    this.modes = modesService.getList();
 
 }]);
