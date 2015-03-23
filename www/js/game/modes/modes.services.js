@@ -3,7 +3,7 @@ gesturesApp.factory('game.modes.modes.service', function() {
     var modes = {
         list: [{
                 name: 'Speed Attack',
-                state: 'speed-attack'
+                state: 'speedAttack'
             }],
         currentMode: null
     };
@@ -17,6 +17,9 @@ gesturesApp.factory('game.modes.modes.service', function() {
         },
         setCurrentMode: function(mode) {
             modes.currentMode = mode;
+        },
+        success: function() {
+            modes.currentMode.success();
         }
     };
 });

@@ -1,23 +1,13 @@
-gesturesApp.factory('game.challenges.arrows.challenge.services', function() {
+gesturesApp.factory('game.challenges.challenges.services', ['$state', '$stateParams', 
+    function($state, $stateParams) {
 
     var challenges = {
         list: [
-//            {
-//                name: 'Graphical Arrow Up',
-//                state: 'graphic-arrow-up'
-//            },
             {
                 name: 'Graphical Arrow Bottom',
-                state: 'graphic-arrow-bottom'
-            },
-            {
-                name: 'Graphical Arrow Up',
-                state: 'graphic-arrow-left'
-            },
-//            {
-//                name: 'Graphical Arrow Right',
-//                state: 'graphic-arrow-right'
-//            }
+                state: 'graphicsArrows',
+                values: ['up', 'down', 'left', 'right']
+            }
         ]
     };
 
@@ -25,10 +15,16 @@ gesturesApp.factory('game.challenges.arrows.challenge.services', function() {
         getList: function() {
             return challenges.list;
         },
-        getRandomChallenge: function() {
-          var random = _.random(0, challenges.list.length - 1);
-          return challenges.list[random];
+        goToRandomChallenge: function() {
+          var randomChallenge = challenges.list[_.random(0, challenges.list.length - 1)];
+          $stateParams.challengeState = randomChallenge.state;
+          var randomValue = _.random(0, randomChallenge.values.length - 1);
+          $stateParams.challengeValue = randomChallenge.values[randomValue];
+          $state.go('game.mode.challenge', $stateParams);
+        },
+        getChallengeByState: function(state) {
+            return _.findWhere(challenges.list, {state: state});
         }
     };
 
-});
+}]);
