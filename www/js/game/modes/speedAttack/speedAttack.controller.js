@@ -4,6 +4,7 @@ gesturesApp.controller('game.modes.speedAttack.speedAttack.controller',
 
                 var self = this;
                 modesService.setCurrentMode(this);
+                this.level = $stateParams.modeValue;
 
                 this.timer = $timeout(function() {
                         self.fail();
@@ -19,7 +20,7 @@ gesturesApp.controller('game.modes.speedAttack.speedAttack.controller',
                 };
 
                 this.goNextLevel = function() {
-                    challengesService.goToRandomChallenge();
+                    challengesService.goToRandomChallenge($stateParams);
                 };
 
                 this.addToLevel = function(numberToAdd) {

@@ -5,10 +5,13 @@
         <group>
             <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/app.js</file>
             <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/index.html</file>
+            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/challenges/graphicsArrows/graphicsArrows.view.html</file>
+            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/challenges/graphicsArrows/graphicsArrows.controller.js</file>
             <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/routes.js</file>
+            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/modes/speedAttack/speedAttack.controller.js</file>
+            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/challenges/challenges.services.js</file>
             <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/menu/menu.controller.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/modes/modes.services.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/menu/menu.html</file>
+            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/modes/modes.services.js</file>
         </group>
     </open-files>
 </project-private>

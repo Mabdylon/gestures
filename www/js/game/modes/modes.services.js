@@ -9,6 +9,9 @@ gesturesApp.factory('game.modes.modes.service', function() {
     };
 
     return {
+        addToList: function(mode) {
+          modes.list.push(mode);
+        },
         getList: function() {
             return modes.list;
         },

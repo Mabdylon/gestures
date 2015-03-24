@@ -15,12 +15,12 @@ gesturesApp.factory('game.challenges.challenges.services', ['$state', '$statePar
         getList: function() {
             return challenges.list;
         },
-        goToRandomChallenge: function() {
+        goToRandomChallenge: function(stateParam) {
           var randomChallenge = challenges.list[_.random(0, challenges.list.length - 1)];
-          $stateParams.challengeState = randomChallenge.state;
+          stateParam.challengeState = randomChallenge.state;
           var randomValue = _.random(0, randomChallenge.values.length - 1);
-          $stateParams.challengeValue = randomChallenge.values[randomValue];
-          $state.go('game.mode.challenge', $stateParams);
+          stateParam.challengeValue = randomChallenge.values[randomValue];
+          $state.go('game.mode.challenge', stateParam);
         },
         getChallengeByState: function(state) {
             return _.findWhere(challenges.list, {state: state});

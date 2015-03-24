@@ -2,9 +2,11 @@ gesturesApp.controller('game.challenges.graphicsArrows.graphicsArrows.controller
     function($stateParams, $ionicGesture, modesService) {
 
         var challengeContentElement = angular.element(document.querySelector( '#challenge-content-element' ) );
-
-        var success = function() {
-            modesService.success();
+        
+        var success = function(e) {
+            if(e.gesture.distance > 150) {
+                modesService.success();
+            }
         };
 
         var values = {
