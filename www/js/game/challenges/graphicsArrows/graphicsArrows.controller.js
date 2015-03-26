@@ -33,7 +33,9 @@ gesturesApp.controller('game.challenges.graphicsArrows.graphicsArrows.controller
                             .set('color', 'black')
                             .end();
                 });
-                $cordovaVibration.vibrate(100);
+                if($cordovaVibration) {
+                    $cordovaVibration.vibrate(100);
+                }
             }
         };
 
