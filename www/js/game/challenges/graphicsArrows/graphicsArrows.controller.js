@@ -1,4 +1,4 @@
-gesturesApp.controller('game.challenges.graphicsArrows.graphicsArrows.controller', ['$stateParams', '$ionicGesture', 'game.modes.modes.service',
+gesturesApp.controller('game.challenges.graphicsArrows.graphicsArrows.controller', ['$stateParams', '$ionicGesture', 'game.modes.modes.service', '$cordovaVibration',
     function($stateParams, $ionicGesture, modesService, $cordovaVibration) {
 
         var self = this;
