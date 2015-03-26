@@ -7,7 +7,7 @@
   "dependencies": {
     "ui-router": "~0.2.13",
     "lodash": "~3.5.0",
-    "collide": "~0.0.4",
-    "ionicons": "~2.0.1"
+    "ionicons": "~2.0.1",
+    "movejs": "~0.4.0"
   }
 }

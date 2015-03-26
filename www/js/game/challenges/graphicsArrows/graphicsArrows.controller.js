@@ -1,60 +1,83 @@
 gesturesApp.controller('game.challenges.graphicsArrows.graphicsArrows.controller', ['$stateParams', '$ionicGesture', 'game.modes.modes.service',
-    function($stateParams, $ionicGesture, modesService) {
+    function($stateParams, $ionicGesture, modesService, $cordovaVibration) {
 
         var self = this;
         var challengeContentElement = angular.element(document.querySelector('#challenge-content-element'));
-        var graphicArrowElement = angular.element(document.querySelector('#graphic-arrow'));
 
         var success = function(e) {
-            console.log(e);
-            window.requestAnimationFrame(function() {
-                self._doDrag(e);
-                return 24;
-            });
-            if (e.gesture.distance > 150) {
-                $ionicGesture.off(this.currentAction);
-                modesService.success();
+            if (e.gesture.direction === challenge.name) {
+                var speedFactor = (e.gesture.velocityX + e.gesture.velocityY);
+//                        e.gesture.deltaTime / 50;
+                move('#graphic-arrow')
+                        .scale(1.5)
+                        .duration(100/speedFactor)
+                        .end(function() {
+                            move('#graphic-arrow')
+                                    .ease('snap')
+                                    .x(challenge.animate.x)
+                                    .y(challenge.animate.y)
+                                    .duration(500/speedFactor)
+                                    .end(function() {
+                                        $ionicGesture.off(swipeGesture, 'swipe');
+                                        modesService.success();
+                                    });
+                        });
+            } else {
+                move('#graphic-arrow')
+                        .scale(1.2)
+                        .set('color', 'red')
+                        .duration(100)
+                        .end(function() {
+                            move('#graphic-arrow')
+                            .scale(0.8)
+                            .set('color', 'black')
+                            .end();
+                });
+                $cordovaVibration.vibrate(100);
             }
-        };
-
-        this._doDrag = function(e) {
-            graphicArrowElement[0].style[ionic.CSS.TRANSFORM] = 'translate3d(' + e.gesture.deltaX * 3 + 'px, ' + e.gesture.deltaY * 3 + 'px, 0)';
         };
 
         var values = {
             up: {
                 text: 'Up',
-                icon: 'ion-android-arrow-up',
-                action: function() {
-                    return $ionicGesture.on('dragup', success, challengeContentElement);
-                }
+                name: 'up',
+                animate: {
+                    x: 0,
+                    y: -400
+                },
+                icon: 'ion-android-arrow-up'
             },
             down: {
                 text: 'Down',
-                icon: 'ion-android-arrow-down',
-                action: function() {
-                    return $ionicGesture.on('dragdown', success, challengeContentElement);
-                }
+                name: 'down',
+                animate: {
+                    x: 0,
+                    y: 400
+                },
+                icon: 'ion-android-arrow-down'
             },
             left: {
                 text: 'Left',
-                icon: 'ion-android-arrow-left',
-                action: function() {
-                    return $ionicGesture.on('dragleft', success, challengeContentElement);
-                }
+                name: 'left',
+                animate: {
+                    x: -400,
+                    y: 0
+                },
+                icon: 'ion-android-arrow-left'
             },
             right: {
                 text: 'Right',
-                icon: 'ion-android-arrow-right',
-                action: function() {
-                    return $ionicGesture.on('dragright', success, challengeContentElement);
-                }
+                name: 'right',
+                animate: {
+                    x: 400,
+                    y: 0
+                },
+                icon: 'ion-android-arrow-right'
             }
         };
 
         var challenge = values[$stateParams.challengeValue];
-
         this.graphicsArrows = challenge;
-        this.currentAction = this.graphicsArrows.action();
+        var swipeGesture = $ionicGesture.on('swipe', success, challengeContentElement);
 
     }]);

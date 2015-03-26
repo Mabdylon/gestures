@@ -6,16 +6,16 @@ gesturesApp.controller('game.modes.speedAttack.speedAttack.controller',
                 modesService.setCurrentMode(this);
                 this.level = $stateParams.modeValue;
 
-                this.timer = $timeout(function() {
-                        self.fail();
-                }, 100000);
+//                this.timer = $timeout(function() {
+//                        self.fail();
+//                }, 5000);
 
                 this.success = function() {
                     $stateParams.modeValue = self.addToLevel(1);
-                    $timeout.cancel(this.timer);
-                    self.timer = $timeout(function() {
-                        self.fail();
-                    }, 100000);
+//                    $timeout.cancel(self.timer);
+//                    self.timer = $timeout(function() {
+//                        self.fail();
+//                    }, 5000);
                     self.goNextLevel();
                 };
 
