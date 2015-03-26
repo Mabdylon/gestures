@@ -5,10 +5,12 @@
 // the 2nd parameter is an array of 'requires'
 var gesturesApp = angular.module('gestures', ['ionic','ngCordova']);
 
-gesturesApp.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
+gesturesApp.run(function($ionicPlatform, $cordovaVibration) {
+    var vibration;
+    $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+    vibration = $cordovaVibration;
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }

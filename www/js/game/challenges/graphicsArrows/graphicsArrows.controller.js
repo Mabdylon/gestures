@@ -1,22 +1,22 @@
-gesturesApp.controller('game.challenges.graphicsArrows.graphicsArrows.controller', ['$stateParams', '$ionicGesture', 'game.modes.modes.service', '$cordovaVibration',
-    function($stateParams, $ionicGesture, modesService, $cordovaVibration) {
-
+gesturesApp.controller('game.challenges.graphicsArrows.graphicsArrows.controller', ['$stateParams', '$ionicGesture', 'game.modes.modes.service',
+    function($stateParams, $ionicGesture, modesService) {
         var self = this;
         var challengeContentElement = angular.element(document.querySelector('#challenge-content-element'));
 
         var success = function(e) {
             if (e.gesture.direction === challenge.name) {
-                var speedFactor = (e.gesture.velocityX + e.gesture.velocityY);
+                var speedFactor = (e.gesture.velocityX + e.gesture.velocityY) / 3;
 //                        e.gesture.deltaTime / 50;
                 move('#graphic-arrow')
                         .scale(1.5)
-                        .duration(100/speedFactor)
+                        .duration(100 / speedFactor)
                         .end(function() {
                             move('#graphic-arrow')
                                     .ease('snap')
+                                    .set('color', 'blue')
                                     .x(challenge.animate.x)
                                     .y(challenge.animate.y)
-                                    .duration(500/speedFactor)
+                                    .duration(500 / speedFactor)
                                     .end(function() {
                                         $ionicGesture.off(swipeGesture, 'swipe');
                                         modesService.success();
@@ -29,12 +29,12 @@ gesturesApp.controller('game.challenges.graphicsArrows.graphicsArrows.controller
                         .duration(100)
                         .end(function() {
                             move('#graphic-arrow')
-                            .scale(0.8)
-                            .set('color', 'black')
-                            .end();
-                });
-                if($cordovaVibration) {
-                    $cordovaVibration.vibrate(100);
+                                    .scale(0.8)
+                                    .set('color', 'black')
+                                    .end();
+                        });
+                if (vibration) {
+                    vibration.vibrate(1000);
                 }
             }
         };
