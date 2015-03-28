@@ -8,7 +8,7 @@
   "dependencies": {
     "ui-router": "~0.2.13",
     "lodash": "~3.5.0",
-    "movejs": "~0.4.0",
-    "ionicons": "~2.0.1"
+    "ionicons": "~2.0.1",
+    "tweenlite": "~1.11.5"
   }
 }

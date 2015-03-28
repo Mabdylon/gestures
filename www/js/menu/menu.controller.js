@@ -4,12 +4,7 @@ gesturesApp.controller('menu.menu.controller',
                 this.modes = modesService.getList();
 
                 this.goToMode = function(mode) {
-                    $state.go('game.mode',
-                            {
-                                modeState : mode.state,
-                                modeValue: 0
-                            }
-                    );
+                    $state.go(mode.state);
                 };
 
             }]);

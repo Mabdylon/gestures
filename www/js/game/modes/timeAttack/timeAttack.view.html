@@ -1,0 +1,14 @@
+<div class="bar bar-header" ng-class="[timeAttackCtrl.theme.topBar.color]">
+    <button class="button icon ion-ios-pause" ng-click="gameCtrl.pause()"></button>
+    <h1 class="title">{{timeAttackCtrl.score}}</h1>
+    <button class="button icon ion-close-round" ng-click="gameCtrl.exit()"></button>
+</div>
+
+<ion-content class="has-header fullscreen-board center" ng-class="[timeAttackCtrl.theme.background.color]" id="game-board" scroll="false">
+    <i id="challenge-element" ng-class="[timeAttackCtrl.challenge.icon]" class="icon"></i>
+</ion-content>
+
+<ion-footer-bar align-title="left" ng-class="[timeAttackCtrl.theme.bottomBar.color]">
+    <h1 class="title" timer on-timeout="timeAttackCtrl.fail()" amount="timeAttackCtrl.time">
+    </h1>
+</ion-footer-bar>

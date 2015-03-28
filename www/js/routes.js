@@ -17,30 +17,10 @@ gesturesApp.config(function($stateProvider, $urlRouterProvider) {
                 template: '<ui-view></ui-view>'
             })
 
-            .state('game.mode', {
-                url: '/mode/:modeState/:modeValue',
-                templateUrl: function($stateParams)
-                {
-                    return 'js/game/modes/' + $stateParams.modeState + '/'
-                            + $stateParams.modeState + '.view.html';
-                },
-                controllerProvider: ['$stateParams', function($stateParams) {
-                    return 'game.modes.' + $stateParams.modeState + '.' +
-                                        $stateParams.modeState + '.controller as '+ $stateParams.modeState +'Ctrl';
-                }]
-            })
-
-            .state('game.mode.challenge', {
-                url: '/challenge/:challengeState/:challengeValue',
-                templateUrl: function($stateParams)
-                {
-                    return 'js/game/challenges/' + $stateParams.challengeState + '/'
-                            + $stateParams.challengeState + '.view.html';
-                },
-                controllerProvider: ['$stateParams', function($stateParams) {
-                    return 'game.challenges.' + $stateParams.challengeState + '.'
-                            + $stateParams.challengeState + '.controller as '+ $stateParams.challengeState +'Ctrl';
-                }]
+            .state('game.timeAttack', {
+                url: '/timeAttack',
+                templateUrl: 'js/game/modes/timeAttack/timeAttack.view.html',
+                controller: 'game.modes.timeAttack.timeAttack.controller as timeAttackCtrl'
             })
 
             .state('game.over', {

@@ -1,37 +1,42 @@
 gesturesApp.factory('game.modes.modes.service', function() {
 
-    var modes = {
+    var self = this;
+
+    self.modes = {
         list: [{
-                name: 'Speed Attack',
-                state: 'speedAttack',
-                button: {
-                    color: 'button-positive'
-                },
-                bar: {
-                    color: 'bar-positive'
-                },
-                background: {
-                    color: 'positive'
+                name: 'Time Attack',
+                state: 'game.timeAttack',
+                theme: {
+                    button: {
+                        color: 'button-positive'
+                    },
+                    topBar: {
+                        color: 'bar-positive'
+                    },
+                    background: {
+                        color: 'positive-bg'
+                    },
+                    bottomBar: {
+                        color: 'bar-assertive'
+                    }
                 }
             }],
         currentMode: null
     };
 
     return {
-        addToList: function(mode) {
-            modes.list.push(mode);
-        },
         getList: function() {
-            return modes.list;
+            return self.modes.list;
         },
-        getCurrentMode: function() {
-            return modes.currentMode;
+        setCurrentMode: function(stateName) {
+          var mode = _.find(self.modes.list, function(mode) {
+              return (stateName === mode.state);
+          });
+          self.modes.currentMode = mode;
         },
-        setCurrentMode: function(mode) {
-            modes.currentMode = mode;
-        },
-        success: function() {
-            modes.currentMode.success();
+        getCurrentTheme: function() {
+            return self.modes.currentMode.theme;
         }
+
     };
 });
