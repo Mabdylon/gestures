@@ -5,9 +5,11 @@ gesturesApp.controller('game.modes.timeAttack.timeAttack.controller',
                 var self = this;
                 self.gameBoardElement = angular.element(document.querySelector('#game-board'));
                 self.challengeElement = angular.element(document.querySelector('#challenge-element'));
+                self.scoreElement = angular.element(document.querySelector('#app-score'));
+
                 modesService.setCurrentMode($state.current.name);
 
-                self.time = 600;
+                self.time = 60;
                 self.score = 0;
                 self.fail = function() {
                     $state.go('game.over');
@@ -19,6 +21,7 @@ gesturesApp.controller('game.modes.timeAttack.timeAttack.controller',
                     self.score += 1;
                     $ionicGesture.off(gesture, 'swipe');
                     self.challenge = challengesService.getRandomChallenge();
+                    self.scoreElement.addClass('animated flip');
                     move('#challenge-element')
                             .scale(1)
                             .end();
@@ -27,6 +30,7 @@ gesturesApp.controller('game.modes.timeAttack.timeAttack.controller',
 
                 self.animate = function(e) {
                     if (e.gesture.direction === self.challenge.condition) {
+                        self.scoreElement.removeClass('animated flip');
                         var speedFactor = (e.gesture.velocityX + e.gesture.velocityY) / 5;
                         move('#challenge-element')
                                 .scale(0)

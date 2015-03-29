@@ -6,6 +6,7 @@ gesturesApp.factory('game.modes.modes.service', function() {
         list: [{
                 name: 'Time Attack',
                 state: 'game.timeAttack',
+                id: 'time-attack',
                 theme: {
                     button: {
                         color: 'button-royal'
