@@ -8,16 +8,16 @@ gesturesApp.factory('game.modes.modes.service', function() {
                 state: 'game.timeAttack',
                 theme: {
                     button: {
-                        color: 'button-positive'
+                        color: 'button-royal'
                     },
                     topBar: {
-                        color: 'bar-positive'
+                        color: 'bar-royal'
                     },
                     background: {
-                        color: 'positive-bg'
+                        color: 'royal-bg'
                     },
                     bottomBar: {
-                        color: 'bar-assertive'
+                        color: 'bar-royal'
                     }
                 }
             }],
