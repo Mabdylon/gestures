@@ -55,5 +55,4 @@ gesturesApp.controller('game.modes.timeAttack.timeAttack.controller',
                 self.challenge = challengesService.getRandomChallenge();
                 var gesture = $ionicGesture.on(self.challenge.gesture, self.animate, self.gameBoardElement);
 
-
             }]);

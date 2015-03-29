@@ -1,16 +1,16 @@
-<div class="bar bar-header animated rotateInDownLeft" ng-class="[timeAttackCtrl.theme.topBar.color]">
+<div class="bar bar-header animated rotateInDownLeft" id="app-game-header" ng-class="[timeAttackCtrl.theme.topBar.color]">
     <i class="button icon ion-ios-pause" ng-click="gameCtrl.pause()"></i>
     <h1 class="title" id="app-score">{{timeAttackCtrl.score}}</h1>
     <i class="button icon ion-close-round" ng-click="gameCtrl.exit()"></i>
 </div>
 
-<ion-content class="has-header fullscreen-board center animated rotateIn" ng-class="[timeAttackCtrl.theme.background.color]" id="game-board" scroll="false">
+<ion-content id="app-game-content" class="has-header fullscreen-board center animated rotateIn" ng-class="[timeAttackCtrl.theme.background.color]" id="game-board" scroll="false">
     <i id="challenge-element" ng-class="[timeAttackCtrl.challenge.icon]" class="icon" ng-style="timeAttackCtrl.challenge.style">
         {{timeAttackCtrl.challenge.text}}
     </i>
 </ion-content>
 
-<ion-footer-bar align-title="left" ng-class="[timeAttackCtrl.theme.bottomBar.color]" class="animated rotateInUpLeft">
+<ion-footer-bar ng-class="[timeAttackCtrl.theme.bottomBar.color]" id="app-game-footer">
     <h1 class="title" timer on-timeout="timeAttackCtrl.fail()" amount="timeAttackCtrl.time">
     </h1>
 </ion-footer-bar>

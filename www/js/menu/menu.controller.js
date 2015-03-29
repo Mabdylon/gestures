@@ -18,7 +18,7 @@ gesturesApp.controller('menu.menu.controller',
                     titleElement.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', onComplete);
                     titleElement.addClass('animated rollOut');
                     selectedModeElement.addClass('animated fadeOutRightBig');
-                    attentionInterval.cancel(attentionInterval);
+                    $interval.cancel(attentionInterval);
                 };
 
                 this.attention = function() {
