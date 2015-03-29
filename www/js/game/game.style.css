@@ -40,23 +40,3 @@
     -ms-flex-align: center;
     align-items: center;
 }
-
-i.ion-arrow-down-a {
-    /*position: relative;*/
-    font-size: 128px;
-}
-
-i.ion-arrow-up-a {
-    /*position: relative;*/
-    font-size: 128px;
-}
-
-i.ion-arrow-left-a {
-    /*position: relative;*/
-    font-size: 128px;
-}
-
-i.ion-arrow-right-a {
-    /*position: relative;*/
-    font-size: 128px;
-}

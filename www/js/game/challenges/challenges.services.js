@@ -5,11 +5,15 @@ gesturesApp.factory('game.challenges.challenges.services', ['game.challenges.arr
         var arrowsValue = arrowsService.getValues();
 
         self.challenges = [
-            arrowsValue.graphics.up,
-            arrowsValue.graphics.down,
-            arrowsValue.graphics.left,
-            arrowsValue.graphics.right
         ];
+
+        for(var typeProp in arrowsValue) {
+            typeChallenge = arrowsValue[typeProp];
+            for(var challengeprop in typeChallenge) {
+                var challenge = typeChallenge[challengeprop];
+                self.challenges.push(challenge);
+            }
+        }
 
         return {
             getList: function() {

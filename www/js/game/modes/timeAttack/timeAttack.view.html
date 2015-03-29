@@ -5,7 +5,9 @@
 </div>
 
 <ion-content class="has-header fullscreen-board center" ng-class="[timeAttackCtrl.theme.background.color]" id="game-board" scroll="false">
-    <i id="challenge-element" ng-class="[timeAttackCtrl.challenge.icon]" class="icon"></i>
+    <i id="challenge-element" ng-class="[timeAttackCtrl.challenge.icon]" class="icon" ng-style="timeAttackCtrl.challenge.style">
+        {{timeAttackCtrl.challenge.text}}
+    </i>
 </ion-content>
 
 <ion-footer-bar align-title="left" ng-class="[timeAttackCtrl.theme.bottomBar.color]">
