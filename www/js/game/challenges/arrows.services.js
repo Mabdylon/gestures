@@ -7,11 +7,9 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                 up: {
                     condition: 'up',
                     gesture: 'swipe',
-                    animate:{
-                        css: {
-                            top: "+=500px"
-                        },
-                        ease:Linear.easeNone
+                    animate: {
+                        y: - $window.screen.height,
+                        x: 0
                     },
                     icon: 'ion-arrow-up-a'
                 },
@@ -19,10 +17,8 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                     condition: 'down',
                     gesture: 'swipe',
                     animate: {
-                        css: {
-                            bottom: "+=550px"
-                        },
-                        ease:Linear.easeNone
+                        y: $window.screen.height,
+                        x: 0
                     },
                     icon: 'ion-arrow-down-a'
                 },
@@ -30,10 +26,8 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                     condition: 'left',
                     gesture: 'swipe',
                     animate: {
-                        css: {
-                            left: "+=550px"
-                        },
-                        ease:Linear.easeNone
+                        y: 0,
+                        x: - $window.screen.width
                     },
                     icon: 'ion-arrow-left-a'
                 },
@@ -41,10 +35,8 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                     condition: 'right',
                     gesture: 'swipe',
                     animate: {
-                        css: {
-                            right: "+=550px"
-                        },
-                        ease:Linear.easeNone
+                        y: 0,
+                        x: $window.screen.width
                     },
                     icon: 'ion-arrow-right-a'
                 }
