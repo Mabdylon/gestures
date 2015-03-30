@@ -18,8 +18,8 @@ gesturesApp.controller('game.modes.timeAttack.timeAttack.controller',
 
 
                 self.goNextLevel = function() {
-                    self.score += 1;
-                    $ionicGesture.off(gesture, 'swipe');
+                    self.score += 1; 
+                    $ionicGesture.off(gesture, self.challenge.gesture);
                     self.challenge = challengesService.getRandomChallenge();
                     self.scoreElement.addClass('animated flip');
                     self.challenge.animations.end(challengeElementId);

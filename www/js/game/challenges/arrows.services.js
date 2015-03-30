@@ -34,6 +34,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
         self.values = {
             graphicsWhite: {
                 up: {
+                    gesture: 'swipe',
                     condition: 'up',
                     style: {
                         color: 'white',
@@ -47,6 +48,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                     icon: 'ion-arrow-up-a'
                 },
                 down: {
+                    gesture: 'swipe',
                     condition: 'down',
                     style: {
                         color: 'white',
@@ -60,6 +62,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                     icon: 'ion-arrow-down-a'
                 },
                 left: {
+                    gesture: 'swipe',
                     condition: 'left',
                     style: {
                         color: 'white',
@@ -73,6 +76,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                     icon: 'ion-arrow-left-a'
                 },
                 right: {
+                    gesture: 'swipe',
                     condition: 'right',
                     style: {
                         color: 'white',
