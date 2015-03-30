@@ -3,14 +3,13 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var gesturesApp = angular.module('gestures', ['ionic','ngCordova']);
+var gesturesApp = angular.module('gestures', ['ionic','ngCordova', 'LocalStorageModule']);
 
-gesturesApp.run(function($ionicPlatform, $cordovaVibration) {
+gesturesApp.run(function($ionicPlatform) {
     var vibration;
     $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-    vibration = $cordovaVibration;
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }

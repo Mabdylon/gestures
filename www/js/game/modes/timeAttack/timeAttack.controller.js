@@ -1,6 +1,6 @@
 gesturesApp.controller('game.modes.timeAttack.timeAttack.controller',
-        ['$window', 'game.modes.modes.service', '$state', 'game.challenges.challenges.services', '$ionicGesture', '$scope',
-            function($window, modesService, $state, challengesService, $ionicGesture, $scope) {
+        ['$window', 'game.modes.modes.service', '$state', 'game.challenges.challenges.services', '$ionicGesture', '$scope', 'game.scores.scores.service',
+            function($window, modesService, $state, challengesService, $ionicGesture, $scope, scoresService) {
 
                 var self = this;
                 self.$state = $state;
@@ -9,8 +9,9 @@ gesturesApp.controller('game.modes.timeAttack.timeAttack.controller',
 
                 modesService.setCurrentMode($state.current.name);
 
+                
                 self.time = 60;
-                self.score = 0;
+                self.score = scoresService.resetMyScore();
                 self.fail = function() {
                     self.$state.transitionTo('game.over');
                 };
@@ -18,7 +19,7 @@ gesturesApp.controller('game.modes.timeAttack.timeAttack.controller',
 
 
                 self.goNextLevel = function() {
-                    self.score += 1; 
+                    self.score = scoresService.addMyScore(1);
                     $ionicGesture.off(gesture, self.challenge.gesture);
                     self.challenge = challengesService.getRandomChallenge();
                     self.scoreElement.addClass('animated flip');

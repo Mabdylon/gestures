@@ -1,7 +1,9 @@
 gesturesApp.controller('menu.menu.controller',
-        ['game.modes.modes.service', '$state', '$interval', '$timeout', function(modesService, $state, $interval, $timeout) {
+        ['game.modes.modes.service', '$state', '$interval', '$timeout', 'game.scores.scores.service', function(modesService, $state, $interval, $timeout, scoresService) {
 
                 var titleElement = angular.element(document.querySelector('#app-title'));
+
+                this.myTotalScore = scoresService.getMyTotalScore();
 
                 this.modes = modesService.getList();
 
