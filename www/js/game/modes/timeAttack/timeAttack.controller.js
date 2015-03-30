@@ -3,8 +3,8 @@ gesturesApp.controller('game.modes.timeAttack.timeAttack.controller',
             function($window, modesService, $state, challengesService, $ionicGesture, $scope) {
 
                 var self = this;
-                self.gameBoardElement = angular.element(document.querySelector('#game-board'));
-                self.challengeElement = angular.element(document.querySelector('#challenge-element'));
+                self.$state = $state;
+                var challengeElementId = '#challenge-element';
                 self.scoreElement = angular.element(document.querySelector('#app-score'));
 
                 modesService.setCurrentMode($state.current.name);
@@ -12,7 +12,7 @@ gesturesApp.controller('game.modes.timeAttack.timeAttack.controller',
                 self.time = 60;
                 self.score = 0;
                 self.fail = function() {
-                    $state.go('game.over');
+                    self.$state.transitionTo('game.over');
                 };
                 self.theme = modesService.getCurrentTheme();
 
@@ -22,37 +22,21 @@ gesturesApp.controller('game.modes.timeAttack.timeAttack.controller',
                     $ionicGesture.off(gesture, 'swipe');
                     self.challenge = challengesService.getRandomChallenge();
                     self.scoreElement.addClass('animated flip');
-                    move('#challenge-element')
-                            .scale(1)
-                            .end();
+                    self.challenge.animations.end(challengeElementId);
                     $scope.$apply();
                 };
 
                 self.animate = function(e) {
-                    if (e.gesture.direction === self.challenge.condition) {
+                    if (self.challenge.isSuccess(e)) {
                         self.scoreElement.removeClass('animated flip');
-                        var speedFactor = (e.gesture.velocityX + e.gesture.velocityY) / 5;
-                        move('#challenge-element')
-                                .scale(0)
-                                .duration((100 / speedFactor))
-                                .x(self.challenge.animate.x)
-                                .y(self.challenge.animate.y)
-                                .ease('in')
-                                .skew(100)
-                                .rotate(360)
-                                .end(self.goNextLevel);
+                        self.challenge.animations.success('#challenge-element', e, self.goNextLevel);
                     } else {
-                        move('#challenge-element')
-                                .set('color', 'red')
-                                .scale(20)
-                                .ease('out')
-                                .duration(500)
-                                .ease()
-                                .end(self.fail);
+                        self.challenge.animations.fail(challengeElementId, e, self.fail);
                     }
                 };
 
                 self.challenge = challengesService.getRandomChallenge();
-                var gesture = $ionicGesture.on(self.challenge.gesture, self.animate, self.gameBoardElement);
+                var gesture = self.challenge.attachGesture('#game-board', self.animate);
+                
 
             }]);
