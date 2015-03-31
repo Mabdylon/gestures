@@ -24,7 +24,7 @@ gesturesApp.factory('game.levels.levels.service', function() {
                 id: 2,
                 name: 'Reverse',
                 hints: 'Hints : Let\'s swipe to the opposite !',
-                color: 'balanced-bg',
+                color: 'calm-bg',
                 challenges: [
                     'arrows-graphic-black-up',
                     'arrows-graphic-black-right',
@@ -40,7 +40,7 @@ gesturesApp.factory('game.levels.levels.service', function() {
                 id: 3,
                 name: 'The Mix',
                 hints: 'Hints : What about mixin\' it up ?',
-                color: 'balanced-bg',
+                color: 'positive-bg',
                 challenges: [
                     'arrows-graphic-white-up',
                     'arrows-graphic-white-right',
@@ -60,7 +60,7 @@ gesturesApp.factory('game.levels.levels.service', function() {
                 id: 4,
                 name: 'The Arrow Mix',
                 hints: 'Hints : Think and swipe',
-                color: 'balanced-bg',
+                color: 'royal-bg',
                 challenges: [
                     'arrows-graphic-white-up',
                     'arrows-graphic-white-down',
@@ -80,7 +80,7 @@ gesturesApp.factory('game.levels.levels.service', function() {
                 id: 5,
                 name: 'Better, Harder, Faster, Longer',
                 hints: 'Hints : Think, swipe and be fast !',
-                color: 'balanced-bg',
+                color: 'energized-bg',
                 challenges: [
                     'arrows-graphic-white-up',
                     'arrows-graphic-white-down',
@@ -123,7 +123,7 @@ gesturesApp.factory('game.levels.levels.service', function() {
                 id: 7,
                 name: 'Reverse text',
                 hints: 'Hints : Read and swipe to the opposite !',
-                color: 'balanced-bg',
+                color: 'calm-bg',
                 challenges: [
                     'arrows-texts-black-up',
                     'arrows-texts-black-right',
@@ -139,7 +139,7 @@ gesturesApp.factory('game.levels.levels.service', function() {
                 id: 8,
                 name: 'The text Mix',
                 hints: 'Hints : Read, think and swipe !',
-                color: 'balanced-bg',
+                color: 'positive-bg',
                 challenges: [
                     'arrows-texts-white-up',
                     'arrows-texts-white-right',
@@ -155,7 +155,7 @@ gesturesApp.factory('game.levels.levels.service', function() {
                 id: 9,
                 name: 'The Mega Mix',
                 hints: 'Hints : Arrows are back !',
-                color: 'balanced-bg',
+                color: 'royal-bg',
                 challenges: [
                     'arrows-texts-white-up',
                     'arrows-graphic-white-down',
@@ -180,9 +180,9 @@ gesturesApp.factory('game.levels.levels.service', function() {
             },
             {
                 id: 10,
-                name: 'The Mega Mix',
+                name: 'The Giga Mix',
                 hints: 'Hints : Oh come on you don\'t need hints anymore !',
-                color: 'balanced-bg',
+                color: 'assertive-bg',
                 challenges: [
                     'arrows-graphic-white-up',
                     'arrows-graphic-black-down',
