@@ -1,5 +1,5 @@
 gesturesApp.controller('menu.menu.controller',
-        ['game.modes.modes.service', '$state', '$interval', '$timeout', 'game.scores.scores.service', function(modesService, $state, $interval, $timeout, scoresService) {
+        ['game.modes.modes.service', '$state', '$interval', '$timeout', 'scores.scores.service', function(modesService, $state, $interval, $timeout, scoresService) {
 
                 var titleElement = angular.element(document.querySelector('#app-title'));
 

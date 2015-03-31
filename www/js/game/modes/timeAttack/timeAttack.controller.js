@@ -1,9 +1,8 @@
 gesturesApp.controller('game.modes.timeAttack.timeAttack.controller',
-        ['$window', 'game.modes.modes.service', '$state', 'game.challenges.challenges.services', '$ionicGesture', '$scope', 'game.scores.scores.service',
+        ['$window', 'game.modes.modes.service', '$state', 'game.challenges.challenges.services', '$ionicGesture', '$scope', 'scores.scores.service',
             function($window, modesService, $state, challengesService, $ionicGesture, $scope, scoresService) {
 
                 var self = this;
-                self.$state = $state;
                 var challengeElementId = '#challenge-element';
                 self.scoreElement = angular.element(document.querySelector('#app-score'));
 
@@ -13,7 +12,7 @@ gesturesApp.controller('game.modes.timeAttack.timeAttack.controller',
                 self.time = 60;
                 self.score = scoresService.resetMyScore();
                 self.fail = function() {
-                    self.$state.transitionTo('game.over');
+                    $state.transitionTo('game.over');
                 };
                 self.theme = modesService.getCurrentTheme();
 

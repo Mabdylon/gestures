@@ -34,6 +34,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
         self.values = {
             graphicsWhite: {
                 up: {
+                    id: 'arrows-graphic-white-up',
                     gesture: 'swipe',
                     condition: 'up',
                     style: {
@@ -48,6 +49,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                     icon: 'ion-arrow-up-a'
                 },
                 down: {
+                    id: 'arrows-graphic-white-down',
                     gesture: 'swipe',
                     condition: 'down',
                     style: {
@@ -62,6 +64,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                     icon: 'ion-arrow-down-a'
                 },
                 left: {
+                    id: 'arrows-graphic-white-left',
                     gesture: 'swipe',
                     condition: 'left',
                     style: {
@@ -76,6 +79,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                     icon: 'ion-arrow-left-a'
                 },
                 right: {
+                    id: 'arrows-graphic-white-right',
                     gesture: 'swipe',
                     condition: 'right',
                     style: {
@@ -97,6 +101,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
             var challenge = graphicsBlack[prop];
             challenge.style.color = 'black';
             if (challenge.condition === 'right') {
+                challenge.id = 'arrows-graphic-black-right';
                 challenge.condition = 'left';
                 challenge.isSuccess = function(event) {
                     return (event.gesture.direction === 'left');
@@ -104,6 +109,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                 continue;
             }
             if (challenge.condition === 'left') {
+                challenge.id = 'arrows-graphic-black-left';
                 challenge.condition = 'right';
                 challenge.isSuccess = function(event) {
                     return (event.gesture.direction === 'right');
@@ -111,6 +117,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                 continue;
             }
             if (challenge.condition === 'up') {
+                challenge.id = 'arrows-graphic-black-up';
                 challenge.condition = 'down';
                 challenge.isSuccess = function(event) {
                     return (event.gesture.direction === 'down');
@@ -118,6 +125,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                 continue;
             }
             if (challenge.condition === 'down') {
+                challenge.id = 'arrows-graphic-black-down';
                 challenge.condition = 'up';
                 challenge.isSuccess = function(event) {
                     return (event.gesture.direction === 'up');
@@ -135,18 +143,22 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
             delete challenge.icon;
             challenge.style['font-size'] = '64px';
             if (prop === 'up') {
+                challenge.id = 'arrows-texts-white-up';
                 challenge.text = 'Up';
                 continue;
             }
             if (prop === 'down') {
+                challenge.id = 'arrows-texts-white-down';
                 challenge.text = 'Down';
                 continue;
             }
             if (prop === 'left') {
+                challenge.id = 'arrows-texts-white-left';
                 challenge.text = 'Left';
                 continue;
             }
             if (prop === 'right') {
+                challenge.id = 'arrows-texts-white-right';
                 challenge.text = 'Right';
                 continue;
             }
@@ -159,18 +171,22 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
             delete challenge.icon;
             challenge.style['font-size'] = '64px';
             if (prop === 'up') {
+                challenge.id = 'arrows-texts-black-up';
                 challenge.text = 'Up';
                 continue;
             }
             if (prop === 'down') {
+                challenge.id = 'arrows-texts-black-down';
                 challenge.text = 'Down';
                 continue;
             }
             if (prop === 'left') {
+                challenge.id = 'arrows-texts-black-left';
                 challenge.text = 'Left';
                 continue;
             }
             if (prop === 'right') {
+                challenge.id = 'arrows-texts-black-right';
                 challenge.text = 'Right';
                 continue;
             }

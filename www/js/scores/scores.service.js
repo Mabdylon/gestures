@@ -1,4 +1,4 @@
-gesturesApp.factory('game.scores.scores.service', function(localStorageService) {
+gesturesApp.factory('scores.scores.service', function(localStorageService) {
 
     var initOrLoadValue = function(id) {
         var storageValue = localStorageService.get(id);
