@@ -2,11 +2,6 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
     function($ionicGesture, $window) {
         var self = this;
 
-        var swipeGesture = function(id, onComplete) {
-            var challengeElement = angular.element(document.querySelector(id));
-            return $ionicGesture.on('swipe', onComplete, challengeElement);
-        };
-
         var defaultAnimations = {
             onStart: function(id, event, onComplete) {
                 angular.element(document.querySelector(id));
@@ -45,7 +40,6 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                         'font-size': '128px'
                     },
                     animations: defaultAnimations,
-                    attachGesture: swipeGesture,
                     isSuccess: function(event) {
                         return (event.gesture.direction === 'up' && event.type === 'swipe');
                     },
@@ -60,7 +54,6 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                         'font-size': '128px'
                     },
                     animations: defaultAnimations,
-                    attachGesture: swipeGesture,
                     isSuccess: function(event) {
                         return (event.gesture.direction === 'down' && event.type === 'swipe');
                     },
@@ -75,7 +68,6 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                         'font-size': '128px'
                     },
                     animations: defaultAnimations,
-                    attachGesture: swipeGesture,
                     isSuccess: function(event) {
                         return (event.gesture.direction === 'left' && event.type === 'swipe');
                     },
@@ -90,7 +82,6 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                         'font-size': '128px'
                     },
                     animations: defaultAnimations,
-                    attachGesture: swipeGesture,
                     isSuccess: function(event) {
                         return (event.gesture.direction === 'right' && event.type === 'swipe');
                     },

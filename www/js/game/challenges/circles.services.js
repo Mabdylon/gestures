@@ -5,16 +5,6 @@ gesturesApp.factory('game.challenges.circles.services', ['$ionicGesture', '$wind
         self.circles = {
         };
 
-        var holdGesture = function(id, onComplete) {
-            var challengeElement = angular.element(document.querySelector(id));
-            return $ionicGesture.on('hold', onComplete, challengeElement);
-        };
-
-        var doubleTapGesture = function(id, onComplete) {
-            var challengeElement = angular.element(document.querySelector(id));
-            return $ionicGesture.on('doubletap', onComplete, challengeElement);
-        };
-
         var defaultAnimations = {
             onStart: function(id, event, onComplete) {
                 angular.element(document.querySelector(id));
@@ -50,7 +40,6 @@ gesturesApp.factory('game.challenges.circles.services', ['$ionicGesture', '$wind
                 color: 'white',
                 'font-size': '128px'
             },
-            attachGesture: holdGesture,
             isSuccess: function(event) {
                 return (event.type === 'hold');
             },
@@ -66,7 +55,6 @@ gesturesApp.factory('game.challenges.circles.services', ['$ionicGesture', '$wind
                 color: 'white',
                 'font-size': '128px'
             },
-            attachGesture: doubleTapGesture,
             isSuccess: function(event) {
                 return (event.type === 'doubletap');
             },
