@@ -223,6 +223,20 @@ gesturesApp.factory('game.levels.levels.service', function() {
                     'arrows-texts-black-right',
                     'arrows-texts-white-right'
                 ]
+            },
+             {
+                id: 11,
+                name: 'A newcomer, the dot !',
+                hints: 'Hints : It\' new, its fresh, press it !',
+                color: 'calm-bg',
+                challenges: [
+                    'circle-hold-white',
+                    'circle-doubletap-white',
+                    'circle-hold-white',
+                    'circle-doubletap-white',
+                    'circle-hold-white',
+                    'circle-doubletap-white'
+                ]
             }
         ]
     };

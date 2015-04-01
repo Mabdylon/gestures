@@ -8,6 +8,9 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
         };
 
         var defaultAnimations = {
+            onStart: function(id, event, onComplete) {
+                angular.element(document.querySelector(id));
+            },
             success: function(id, event, onComplete) {
                 var speedFactor = (event.gesture.velocityX + event.gesture.velocityY) / 5;
                 move(id)
@@ -44,7 +47,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                     animations: defaultAnimations,
                     attachGesture: swipeGesture,
                     isSuccess: function(event) {
-                        return (event.gesture.direction === 'up');
+                        return (event.gesture.direction === 'up' && event.type === 'swipe');
                     },
                     icon: 'ion-arrow-up-a'
                 },
@@ -59,7 +62,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                     animations: defaultAnimations,
                     attachGesture: swipeGesture,
                     isSuccess: function(event) {
-                        return (event.gesture.direction === 'down');
+                        return (event.gesture.direction === 'down' && event.type === 'swipe');
                     },
                     icon: 'ion-arrow-down-a'
                 },
@@ -74,7 +77,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                     animations: defaultAnimations,
                     attachGesture: swipeGesture,
                     isSuccess: function(event) {
-                        return (event.gesture.direction === 'left');
+                        return (event.gesture.direction === 'left' && event.type === 'swipe');
                     },
                     icon: 'ion-arrow-left-a'
                 },
@@ -89,7 +92,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                     animations: defaultAnimations,
                     attachGesture: swipeGesture,
                     isSuccess: function(event) {
-                        return (event.gesture.direction === 'right');
+                        return (event.gesture.direction === 'right' && event.type === 'swipe');
                     },
                     icon: 'ion-arrow-right-a'
                 }
@@ -104,7 +107,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                 challenge.id = 'arrows-graphic-black-right';
                 challenge.condition = 'left';
                 challenge.isSuccess = function(event) {
-                    return (event.gesture.direction === 'left');
+                    return (event.gesture.direction === 'left' && event.type === 'swipe');
                 };
                 continue;
             }
@@ -112,7 +115,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                 challenge.id = 'arrows-graphic-black-left';
                 challenge.condition = 'right';
                 challenge.isSuccess = function(event) {
-                    return (event.gesture.direction === 'right');
+                    return (event.gesture.direction === 'right' && event.type === 'swipe');
                 };
                 continue;
             }
@@ -120,7 +123,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                 challenge.id = 'arrows-graphic-black-up';
                 challenge.condition = 'down';
                 challenge.isSuccess = function(event) {
-                    return (event.gesture.direction === 'down');
+                    return (event.gesture.direction === 'down' && event.type === 'swipe');
                 };
                 continue;
             }
@@ -128,7 +131,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                 challenge.id = 'arrows-graphic-black-down';
                 challenge.condition = 'up';
                 challenge.isSuccess = function(event) {
-                    return (event.gesture.direction === 'up');
+                    return (event.gesture.direction === 'up' && event.type === 'swipe');
                 };
                 continue;
             }

@@ -1,18 +1,23 @@
-gesturesApp.factory('game.challenges.challenges.services', ['game.challenges.arrows.services',
-    function(arrowsService) {
+gesturesApp.factory('game.challenges.challenges.services', ['game.challenges.arrows.services', 'game.challenges.circles.services',
+    function(arrowsService, circlesService) {
 
         var self = this;
-        var arrowsValue = arrowsService.getValues();
+        var arrowsValues = arrowsService.getValues();
+        var circlesValues = circlesService.getValues();
 
         self.challenges = [
         ];
 
-        for(var typeProp in arrowsValue) {
-            typeChallenge = arrowsValue[typeProp];
+        for(var typeProp in arrowsValues) {
+            typeChallenge = arrowsValues[typeProp];
             for(var challengeprop in typeChallenge) {
                 var challenge = typeChallenge[challengeprop];
                 self.challenges.push(challenge);
             }
+        }
+
+        for(var challenge in circlesValues) {
+            self.challenges.push(circlesValues[challenge]);
         }
 
         return {

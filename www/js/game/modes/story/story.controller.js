@@ -12,7 +12,6 @@ gesturesApp.controller('game.modes.story.story.controller',
                 };
 
                 self.goNextLevel = function() {
-                    $ionicGesture.off(gesture, self.challenge.gesture);
                     self.step += 1;
                     self.challenge = challengesService.getChallengeById(self.challengesId[self.step]);
                     self.challenge.animations.end(challengeElementId);
@@ -26,7 +25,11 @@ gesturesApp.controller('game.modes.story.story.controller',
                 };
 
                 self.challenge = challengesService.getChallengeById(self.challengesId[self.step]);
-                var gesture = self.challenge.attachGesture('#game-board', self.animate);
+
+                var challengeElement = angular.element(document.querySelector('#game-board'));
+                $ionicGesture.on('hold', self.animate, challengeElement);
+                $ionicGesture.on('doubletap', self.animate, challengeElement);
+                $ionicGesture.on('swipe', self.animate, challengeElement);
                 
 
             }]);
