@@ -6,7 +6,6 @@
 var gesturesApp = angular.module('gestures', ['ionic','ngCordova', 'LocalStorageModule']);
 
 gesturesApp.run(function($ionicPlatform) {
-    var vibration;
     $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)

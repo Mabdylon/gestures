@@ -37,8 +37,8 @@ gesturesApp.config(function($stateProvider, $urlRouterProvider) {
 
 
             .state('game.over', {
-              url: '/gameOver',
-              templateUrl: 'js/game/gameOver/GameOver.view.html',
+              url: '/game-over',
+              templateUrl: 'js/game/gameOver/game-over.view.html',
               controller: 'game.gameOver.gameOver.controller as gameOverCtrl'
             });
 
