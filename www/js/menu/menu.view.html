@@ -4,10 +4,10 @@
 
 
 <ion-content class="has-header" scroll="false">
-<button id="app-{{mode.id}}" ng-repeat="mode in menuCtrl.modes" class="button button-block animated fadeInLeftBig" ng-class="[mode.theme.button.color]"
+<button id="{{mode.id}}" ng-repeat="mode in menuCtrl.modes" class="button button-block animated fadeInLeftBig" ng-class="[mode.theme.button.color]"
         ng-click="menuCtrl.goToMode(mode)">{{mode.name}}</button>
 </ion-content>
 
 <ion-footer-bar>
-    <h1 class="title"> {{menuCtrl.myTotalScore}} € </h1>
+    <h1 class="title" id="total-score"> {{menuCtrl.myTotalScore}} € </h1>
 </ion-footer-bar>
