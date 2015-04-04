@@ -1,28 +1,23 @@
-gesturesApp.factory('scores.scores.service', function(localStorageService) {
+gesturesApp.factory('commons.scores.service', ['commons.utils.service', 'localStorageService',
+    function(utilsService, localStorageService) {
 
-    var initOrLoadValue = function(id) {
-        var storageValue = localStorageService.get(id);
-        var value = storageValue | 0;
-        return value;
-    };
-    
     var myTotalScoreKey = 'scores.my.totalScore';
     var myCurrentScoreKey = 'scores.my.currentScore';
 
-    var myTotalScore = initOrLoadValue(myTotalScoreKey);
-    var myCurrentScore = initOrLoadValue(myCurrentScoreKey);
+    var myTotalScore = utilsService.initOrLoadIntValue(myTotalScoreKey);
+    var myCurrentScore = utilsService.initOrLoadIntValue(myCurrentScoreKey);
 
     var addMyScore = function(amount) {
         myCurrentScore += amount;
-        myTotalScore += amount;
         localStorageService.set(myCurrentScoreKey, myCurrentScore);
+        myTotalScore += amount;
         localStorageService.set(myTotalScoreKey, myTotalScore);
         return myCurrentScore;
     };
 
     var resetMyScore = function() {
         myCurrentScore = 0;
-        localStorageService.set(myTotalScoreKey, myCurrentScore);
+        localStorageService.set(myCurrentScoreKey, myCurrentScore);
         return myCurrentScore;
     };
 
@@ -37,4 +32,4 @@ gesturesApp.factory('scores.scores.service', function(localStorageService) {
         }
     };
 
-});
+}]);

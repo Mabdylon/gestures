@@ -1,5 +1,5 @@
 gesturesApp.controller('menu.menu.controller',
-        ['game.modes.modes.service', '$state', '$interval', '$timeout', 'scores.scores.service', 'commons.animatecss.service',
+        ['game.modes.modes.service', '$state', '$interval', '$timeout', 'commons.scores.service', 'commons.animatecss.service',
             function(modesService, $state, $interval, $timeout, scoresService, animatecssService) {
 
                 var self = this;

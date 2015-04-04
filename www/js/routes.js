@@ -29,6 +29,12 @@ gesturesApp.config(function($stateProvider, $urlRouterProvider) {
                 controller: 'game.modes.story.story.controller as storyCtrl'
             })
 
+            .state('game.storyOver', {
+                url: '/story-over/:level',
+                templateUrl: 'js/game/storyOver/story-over.view.html',
+                controller: 'game.modes.story.storyOver.controller as storyOverCtrl'
+            })
+
             .state('game.levels', {
                 url: '/levels',
                 templateUrl: 'js/game/levels/levels.view.html',
@@ -37,7 +43,7 @@ gesturesApp.config(function($stateProvider, $urlRouterProvider) {
 
 
             .state('game.over', {
-              url: '/game-over',
+              url: '/game-over/:from',
               templateUrl: 'js/game/gameOver/game-over.view.html',
               controller: 'game.gameOver.gameOver.controller as gameOverCtrl'
             });

@@ -1,4 +1,5 @@
-gesturesApp.factory('game.levels.levels.service', function() {
+gesturesApp.factory('game.levels.levels.service', [
+    function() {
 
     var self = this;
 
@@ -253,4 +254,4 @@ gesturesApp.factory('game.levels.levels.service', function() {
         }
     };
 
-});
+}]);

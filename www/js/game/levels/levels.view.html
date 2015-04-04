@@ -1,11 +1,13 @@
 <div class="bar bar-header bar-{{levelsCtrl.mode.color}} animated rotateInDownLeft" ng-class="[levelsCtrl.theme.topBar.color]">
-    <h1 class="title" id="app-score">?</h1>
+    <h1 class="title" id="app-score">{{levelsCtrl.progress}} %</h1>
     <i class="button button-clear icon ion-close-round" ng-click="gameCtrl.exit()"></i>
 </div>
 
 <ion-content class="has-header fullscreen-board-bottom animated fadeInLeftBig" ng-class="[levelsCtrl.theme.background.color]" id="game-board" scroll="true">
 
-    <button ng-repeat="level in levelsCtrl.levels" class="button button-block button-small-font-size button-{{level.color}} button-margin-top-down animated fadeIn"
+    <button ng-repeat="level in levelsCtrl.levels" ng-disabled="!levelsCtrl.unlockedLevels[level.id].unlocked"
+            ng-class="{'ion-android-lock': !levelsCtrl.unlockedLevels[level.id].unlocked}"
+            class="icon-left button button-block button-small-font-size button-{{level.color}} button-margin-top-down animated fadeIn"
             ng-click="levelsCtrl.goToLevel(level)">
         {{level.name}}
     </button>

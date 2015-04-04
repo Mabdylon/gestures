@@ -3,18 +3,18 @@ gesturesApp.factory('game.modes.modes.service', function() {
     var self = this;
 
     self.modes = {
-        list: [{
-                name: 'Time Attack',
-                state: 'game.timeAttack',
-                id: 'time-attack',
-                class: 'menu-mode',
-                color: 'assertive'
-            }, {
+        list: [ {
                 name: 'Story',
                 state: 'game.levels',
                 id: 'story',
                 class: 'menu-mode',
                 color: 'positive'
+            },{
+                name: 'Time Attack',
+                state: 'game.timeAttack',
+                id: 'time-attack',
+                class: 'menu-mode',
+                color: 'assertive'
             }],
         currentMode: null
     };
