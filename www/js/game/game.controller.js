@@ -1,11 +1,12 @@
 gesturesApp.controller('game.game.controller', ['$state', '$scope', '$ionicModal', function($state, $scope, $ionicModal) {
 
         this.exit = function() {
+            $scope.$broadcast('timer.stop');
             $state.go('menu');
         };
 
         this.pause = function() {
-            $scope.$emit('game.pause');
+            $scope.$broadcast('timer.pause');
             $ionicModal.fromTemplateUrl('js/game/modals/pause/pause.view.html', {
                 scope: $scope,
                 animation: 'slide-in-up'
@@ -18,7 +19,7 @@ gesturesApp.controller('game.game.controller', ['$state', '$scope', '$ionicModal
         $scope.closeModal = function() {
 		$scope.modal.hide();
 		$scope.modal.remove();
-                $scope.$emit('game.resume');
+                $scope.$broadcast('timer.resume');
 	};
 
 

@@ -11,9 +11,9 @@ gesturesApp.directive('timer', ['$timeout', function($timeout) {
                 var initial = $scope.amount;
 
                 var startTimeout = function() {
-                    $timeout(function() {
+                    return $timeout(function() {
                         $scope.onTimeout();
-                    }, ($scope.amount * 1000));
+                    }, ($scope.amount * 1000)); 
                 };
                 var updateTime = function() {
                     timerElement.innerHTML = $scope.amount.toFixed(1);
@@ -22,14 +22,18 @@ gesturesApp.directive('timer', ['$timeout', function($timeout) {
                 var timer = startTimeout($scope.amount);
                 var tween = TweenLite.to($scope, initial, {amount: 0, onUpdate: updateTime});
 
-                $scope.$on('game.pause', function() {
+                $scope.$on('timer.pause', function() {
                     tween.pause();
                     $timeout.cancel(timer);
                 });
 
-                $scope.$on('game.resume', function() {
+                $scope.$on('timer.resume', function() {
                     startTimeout($scope.amount);
                     tween.resume();
+                });
+
+                $scope.$on('timer.stop', function() {
+                    $timeout.cancel(timer);
                 });
 
                 $scope.$on(

@@ -9,9 +9,10 @@ gesturesApp.controller('game.modes.timeAttack.timeAttack.controller',
                 modesService.setCurrentMode($state.current.name);
 
 
-                self.time = 60;
+                self.time = 10;
                 self.score = scoresService.resetMyScore();
                 self.fail = function() {
+                    $scope.$broadcast('timer.stop');
                     $state.transitionTo('game.over');
                 };
                 self.theme = modesService.getCurrentTheme();
