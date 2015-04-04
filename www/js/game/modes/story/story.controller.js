@@ -6,13 +6,19 @@ gesturesApp.controller('game.modes.story.story.controller',
                 var challengeElementId = '#challenge-element';
                 self.level = levelsService.getLevelById($stateParams.level);
                 self.challengesId = self.level.challenges;
+                self.nbChallenge = self.challengesId.length;
                 self.step = 0;
+
+                self.computeProgress = function() {
+                    self.progress = ((self.step / self.nbChallenge) * 100).toFixed(0);
+                };
 
                 self.fail = function() {
                 };
 
                 self.goNextLevel = function() {
                     self.step += 1;
+                    self.computeProgress();
                     self.challenge = challengesService.getChallengeById(self.challengesId[self.step]);
                     self.challenge.animations.end(challengeElementId);
                     $scope.$apply();
@@ -31,5 +37,6 @@ gesturesApp.controller('game.modes.story.story.controller',
                 $ionicGesture.on('doubletap', self.animate, challengeElement);
                 $ionicGesture.on('swipe', self.animate, challengeElement);
                 
+                self.computeProgress();
 
             }]);

@@ -8,39 +8,13 @@ gesturesApp.factory('game.modes.modes.service', function() {
                 state: 'game.timeAttack',
                 id: 'time-attack',
                 class: 'menu-mode',
-                theme: {
-                    button: {
-                        color: 'button-royal'
-                    },
-                    topBar: {
-                        color: 'bar-royal'
-                    },
-                    background: {
-                        color: 'royal-bg'
-                    },
-                    bottomBar: {
-                        color: 'bar-royal'
-                    }
-                }
+                color: 'assertive'
             }, {
                 name: 'Story',
                 state: 'game.levels',
                 id: 'story',
                 class: 'menu-mode',
-                theme: {
-                    button: {
-                        color: 'button-calm'
-                    },
-                    topBar: {
-                        color: 'bar-calm'
-                    },
-                    background: {
-                        color: 'royal-calm'
-                    },
-                    bottomBar: {
-                        color: 'bar-calm'
-                    }
-                }
+                color: 'positive'
             }],
         currentMode: null
     };
@@ -55,8 +29,8 @@ gesturesApp.factory('game.modes.modes.service', function() {
             });
             self.modes.currentMode = mode;
         },
-        getCurrentTheme: function() {
-            return self.modes.currentMode.theme;
+        getCurrentMode: function() {
+            return self.modes.currentMode;
         }
 
     };

@@ -1,17 +1,13 @@
-<div class="bar bar-header animated rotateInDownLeft" ng-class="[levelsCtrl.theme.topBar.color]">
+<div class="bar bar-header bar-{{levelsCtrl.mode.color}} animated rotateInDownLeft" ng-class="[levelsCtrl.theme.topBar.color]">
     <h1 class="title" id="app-score">?</h1>
-    <i class="button icon ion-close-round" ng-click="gameCtrl.exit()"></i>
+    <i class="button button-clear icon ion-close-round" ng-click="gameCtrl.exit()"></i>
 </div>
 
-<ion-content class="has-header fullscreen-board center animated rotateIn" ng-class="[levelsCtrl.theme.background.color]" id="game-board" scroll="false">
+<ion-content class="has-header fullscreen-board-bottom animated fadeInLeftBig" ng-class="[levelsCtrl.theme.background.color]" id="game-board" scroll="true">
 
-    <button ng-repeat="level in levelsCtrl.levels" class="button button-block animated fadeIn"
-            ng-click="levelsCtrl.goToLevel(level)" ng-class="[level.color]">
+    <button ng-repeat="level in levelsCtrl.levels" class="button button-block button-small-font-size button-{{level.color}} button-margin-top-down animated fadeIn"
+            ng-click="levelsCtrl.goToLevel(level)">
         {{level.name}}
     </button>
 
 </ion-content>
-
-<ion-footer-bar ng-class="[levelsCtrl.theme.bottomBar.color]">
-    ?
-</ion-footer-bar>

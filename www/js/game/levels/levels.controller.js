@@ -4,7 +4,7 @@ gesturesApp.controller('game.levels.levels.controller',
 
                 var self = this;
                 modesService.setCurrentMode($state.current.name);
-                self.theme = modesService.getCurrentTheme();
+                self.mode = modesService.getCurrentMode();
 
                 this.levels = levelsService.getList();
 

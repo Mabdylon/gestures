@@ -8,7 +8,7 @@ gesturesApp.factory('game.levels.levels.service', function() {
                 id: 1,
                 name: 'The begining',
                 hints: 'Hints : Swipe the arrow !',
-                color: 'balanced-bg',
+                color: 'dark',
                 challenges: [
                     'arrows-graphic-white-up',
                     'arrows-graphic-white-right',
@@ -24,7 +24,7 @@ gesturesApp.factory('game.levels.levels.service', function() {
                 id: 2,
                 name: 'Reverse',
                 hints: 'Hints : Let\'s swipe to the opposite !',
-                color: 'calm-bg',
+                color: 'positive',
                 challenges: [
                     'arrows-graphic-black-up',
                     'arrows-graphic-black-right',
@@ -40,7 +40,7 @@ gesturesApp.factory('game.levels.levels.service', function() {
                 id: 3,
                 name: 'The Mix',
                 hints: 'Hints : What about mixin\' it up ?',
-                color: 'positive-bg',
+                color: 'calm',
                 challenges: [
                     'arrows-graphic-white-up',
                     'arrows-graphic-white-right',
@@ -58,9 +58,9 @@ gesturesApp.factory('game.levels.levels.service', function() {
             },
             {
                 id: 4,
-                name: 'The Arrow Mix',
+                name: 'Arrow Mix',
                 hints: 'Hints : Think and swipe',
-                color: 'royal-bg',
+                color: 'balanced',
                 challenges: [
                     'arrows-graphic-white-up',
                     'arrows-graphic-white-down',
@@ -78,9 +78,9 @@ gesturesApp.factory('game.levels.levels.service', function() {
             },
             {
                 id: 5,
-                name: 'Better, Harder, Faster, Longer',
+                name: 'Better, Harder',
                 hints: 'Hints : Think, swipe and be fast !',
-                color: 'energized-bg',
+                color: 'energized',
                 challenges: [
                     'arrows-graphic-white-up',
                     'arrows-graphic-white-down',
@@ -107,7 +107,7 @@ gesturesApp.factory('game.levels.levels.service', function() {
                 id: 6,
                 name: 'Enough arrows',
                 hints: 'Hints : Read and swipe !',
-                color: 'balanced-bg',
+                color: 'assertive',
                 challenges: [
                     'arrows-texts-white-up',
                     'arrows-texts-white-right',
@@ -123,7 +123,7 @@ gesturesApp.factory('game.levels.levels.service', function() {
                 id: 7,
                 name: 'Reverse text',
                 hints: 'Hints : Read and swipe to the opposite !',
-                color: 'calm-bg',
+                color: 'royal',
                 challenges: [
                     'arrows-texts-black-up',
                     'arrows-texts-black-right',
@@ -139,7 +139,7 @@ gesturesApp.factory('game.levels.levels.service', function() {
                 id: 8,
                 name: 'The text Mix',
                 hints: 'Hints : Read, think and swipe !',
-                color: 'positive-bg',
+                color: 'dark',
                 challenges: [
                     'arrows-texts-white-up',
                     'arrows-texts-white-right',
@@ -155,7 +155,7 @@ gesturesApp.factory('game.levels.levels.service', function() {
                 id: 9,
                 name: 'The Mega Mix',
                 hints: 'Hints : Arrows are back !',
-                color: 'royal-bg',
+                color: 'positive',
                 challenges: [
                     'arrows-texts-white-up',
                     'arrows-graphic-white-down',
@@ -182,7 +182,7 @@ gesturesApp.factory('game.levels.levels.service', function() {
                 id: 10,
                 name: 'The Giga Mix',
                 hints: 'Hints : Oh come on you don\'t need hints anymore !',
-                color: 'assertive-bg',
+                color: 'calm',
                 challenges: [
                     'arrows-graphic-white-up',
                     'arrows-graphic-black-down',
@@ -226,9 +226,9 @@ gesturesApp.factory('game.levels.levels.service', function() {
             },
              {
                 id: 11,
-                name: 'A newcomer, the dot !',
+                name: 'New : the circle !',
                 hints: 'Hints : It\' new, its fresh, press it !',
-                color: 'calm-bg',
+                color: 'balanced',
                 challenges: [
                     'circle-hold-white',
                     'circle-doubletap-white',

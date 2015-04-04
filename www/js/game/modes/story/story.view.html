@@ -1,15 +1,15 @@
-<div class="bar bar-header animated rotateInDownLeft" ng-class="[storyCtrl.level.color]">
-    <i class="button icon ion-ios-pause" ng-click="gameCtrl.pause()"></i>
-    <h1 class="title" id="app-score">?</h1>
-    <i class="button icon ion-close-round" ng-click="gameCtrl.exit()"></i>
+<div class="bar bar-header animated rotateInDownLeft bar-{{storyCtrl.level.color}}">
+    <i class="button button-clear icon ion-ios-pause" ng-click="gameCtrl.pause()"></i>
+    <h1 class="title" id="app-score">{{storyCtrl.progress}}%</h1>
+    <i class="button button-clear icon ion-close-round" ng-click="gameCtrl.exit()"></i>
 </div>
 
-<ion-content class="has-header fullscreen-board center animated rotateIn" ng-class="[storyCtrl.level.color]" id="game-board" scroll="false">
+<ion-content class="has-header fullscreen-board center {{storyCtrl.level.color}}-bg animated rotateIn" id="game-board" scroll="false">
     <i id="challenge-element" ng-class="[storyCtrl.challenge.icon]" class="icon" ng-style="storyCtrl.challenge.style">
         {{storyCtrl.challenge.text}}
     </i>
 </ion-content>
 
-<ion-footer-bar ng-class="[storyCtrl.level.color]">
-    ?
-</ion-footer-bar>
+<div class="bar bar-footer bar-{{storyCtrl.level.color}}">
+    <h1 class="title">?</h1>
+</div>

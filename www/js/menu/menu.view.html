@@ -4,7 +4,7 @@
 
 
 <ion-content class="has-header" scroll="false">
-<button id="{{mode.id}}" ng-repeat="mode in menuCtrl.modes" class="button button-block animated fadeInLeftBig" ng-class="[mode.theme.button.color, mode.class]"
+<button id="{{mode.id}}" ng-repeat="mode in menuCtrl.modes" class="button button-block button-{{mode.color}} animated fadeInLeftBig" ng-class="[mode.class]"
         ng-click="menuCtrl.goToMode(mode)">{{mode.name}}</button>
 </ion-content>
 

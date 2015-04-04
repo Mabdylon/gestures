@@ -10,6 +10,18 @@
     top: 100px;
 }
 
+.fullscreen-board-bottom {
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 100px;
+}
+
 fullscreen-board-game-over {
     max-width: 100%;
     max-height: 100%;
