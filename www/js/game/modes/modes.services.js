@@ -7,6 +7,7 @@ gesturesApp.factory('game.modes.modes.service', function() {
                 name: 'Time Attack',
                 state: 'game.timeAttack',
                 id: 'time-attack',
+                class: 'menu-mode',
                 theme: {
                     button: {
                         color: 'button-royal'
@@ -25,6 +26,7 @@ gesturesApp.factory('game.modes.modes.service', function() {
                 name: 'Story',
                 state: 'game.levels',
                 id: 'story',
+                class: 'menu-mode',
                 theme: {
                     button: {
                         color: 'button-calm'

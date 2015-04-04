@@ -1,12 +1,34 @@
 gesturesApp.factory('commons.animatecss.service', ['$interval', function($interval) {
 
-    var animate = function(id, className, onComplete) {
-        var element = angular.element(document.querySelector(id));
+    var self = this;
+    var globalDuration = 1;
+
+    var setDuration = function(duration) {
+        self.globalDuration = duration;
+    };
+
+    var animate = function(id, className, duration, onComplete) {
+        if(duration instanceof Function) {
+            onComplete = duration;
+            duration = self.globalDuration;
+        }
+        if(!duration) {
+            duration = self.globalDuration;
+        }
+        var element = angular.element(document.querySelectorAll(id));
         removeAllAnimationClasses(element);
         if(onComplete) {
             element.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', onComplete);
         }
+        addDuration(element, duration);
         element.addClass('animated '+className);
+    };
+
+    var addDuration = function(element, duration) {
+        element.css('webkit-animation-duration', duration+'s');
+        element.css('moz-animation-duration', duration+'s');
+        element.css('MS-animation-duration', duration+'s');
+        element.css('animation-duration', duration+'s');
     };
 
     var animateRepeat = function(id, className, interval, onComplete) {
@@ -32,7 +54,8 @@ gesturesApp.factory('commons.animatecss.service', ['$interval', function($interv
 
     return {
         animate: animate,
-        animateRepeat: animateRepeat
+        animateRepeat: animateRepeat,
+        setDuration: setDuration
     };
 
 }]);
