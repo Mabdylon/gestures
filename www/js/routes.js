@@ -20,13 +20,15 @@ gesturesApp.config(function($stateProvider, $urlRouterProvider) {
             .state('game.timeAttack', {
                 url: '/timeAttack',
                 templateUrl: 'js/game/modes/timeAttack/timeAttack.view.html',
-                controller: 'game.modes.timeAttack.timeAttack.controller as timeAttackCtrl'
+                controller: 'game.modes.timeAttack.timeAttack.controller as timeAttackCtrl',
+                cache: false
             })
 
             .state('game.story', {
                 url: '/story/:level',
                 templateUrl: 'js/game/modes/story/story.view.html',
-                controller: 'game.modes.story.story.controller as storyCtrl'
+                controller: 'game.modes.story.story.controller as storyCtrl',
+                cache: false
             })
 
             .state('game.storyOver', {

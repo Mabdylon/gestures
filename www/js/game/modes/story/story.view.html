@@ -4,12 +4,14 @@
     <i class="button button-clear icon ion-close-round" ng-click="gameCtrl.exit()"></i>
 </div>
 
-<ion-content class="has-header fullscreen-board center {{storyCtrl.level.color}}-bg animated rotateIn" id="game-board" scroll="false">
-    <i id="challenge-element" ng-class="[storyCtrl.challenge.icon]" class="icon" ng-style="storyCtrl.challenge.style">
-        {{storyCtrl.challenge.text}}
-    </i>
+<ion-content class="has-header fullscreen-board {{storyCtrl.level.color}}-bg animated zoomIn" id="game-board" scroll="false">
+    <gs-challenges challenge="storyCtrl.challenge" on-success="storyCtrl.goNextLevel()" on-fail="storyCtrl.fail()"
+                   class="icon fullscreen-board-challenge center">
+    </gs-challenges>
 </ion-content>
 
-<div class="bar bar-footer bar-{{storyCtrl.level.color}}">
-    <h1 class="title">?</h1>
+<div class="bar bar-footer bar-{{storyCtrl.level.color}} animated rotateInUpRight">
+    <h1 class="title">
+        ?
+    </h1>
 </div>

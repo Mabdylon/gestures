@@ -4,13 +4,13 @@
     <i class="button button-clear icon ion-close-round" ng-click="gameCtrl.exit()"></i>
 </div>
 
-<ion-content class="has-header fullscreen-board center {{timeAttackCtrl.mode.color}}-bg animated rotateIn" ng-class="[timeAttackCtrl.theme.background.color]" id="game-board" scroll="false">
-    <i id="challenge-element" ng-class="[timeAttackCtrl.challenge.icon]" class="icon" ng-style="timeAttackCtrl.challenge.style">
-        {{timeAttackCtrl.challenge.text}}
-    </i>
+<ion-content class="has-header fullscreen-board {{timeAttackCtrl.mode.color}}-bg animated zoomIn" id="game-board" scroll="false">
+    <gs-challenges challenge="timeAttackCtrl.challenge" on-success="timeAttackCtrl.goNextLevel()" on-fail="timeAttackCtrl.fail()"
+                   class="icon fullscreen-board-challenge center">
+    </gs-challenges>
 </ion-content>
 
-<div class="bar bar-footer bar-{{timeAttackCtrl.mode.color}}" ng-class="[timeAttackCtrl.theme.bottomBar.color]">
+<div class="bar bar-footer bar-{{timeAttackCtrl.mode.color}} animated rotateInUpRight" ng-class="[timeAttackCtrl.theme.bottomBar.color]">
     <h1 class="title" timer on-timeout="timeAttackCtrl.fail()" amount="timeAttackCtrl.time">
     </h1>
 </div>

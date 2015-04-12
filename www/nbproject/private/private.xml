@@ -3,21 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/index.html</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/directives/timer.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/menu/menu.style.css</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/gameOver/gameOver.view.html</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/challenges/arrows.services.js</file>
+            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/modes/story/story.controller.js</file>
+            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/levels/levels.service.js</file>
+            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/levels/levels.view.html</file>
+            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/storyOver/story-over.view.html</file>
+            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/gameOver/game-over.view.html</file>
+            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/levels/levels.controller.js</file>
+            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/storyOver/storyOver.controller.js</file>
             <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/menu/menu.view.html</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/game.style.css</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/routes.js</file>
+            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/levels/level.style.css</file>
             <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/gameOver/gameOver.controller.js</file>
             <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/challenges/challenges.services.js</file>
             <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/menu/menu.controller.js</file>
             <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/modes/timeAttack/timeAttack.view.html</file>
             <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/modes/timeAttack/timeAttack.controller.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/css/style.css</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/modes/modes.services.js</file>
+            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/modes/story/story.view.html</file>
         </group>
     </open-files>
 </project-private>

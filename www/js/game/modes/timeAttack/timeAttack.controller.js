@@ -3,7 +3,6 @@ gesturesApp.controller('game.modes.timeAttack.timeAttack.controller',
             function($window, modesService, $state, challengesService, $ionicGesture, $scope, scoresService) {
 
                 var self = this;
-                var challengeElementId = '#challenge-element';
                 self.scoreElement = angular.element(document.querySelector('#app-score'));
 
                 modesService.setCurrentMode($state.current.name);
@@ -21,28 +20,14 @@ gesturesApp.controller('game.modes.timeAttack.timeAttack.controller',
 
 
                 self.goNextLevel = function() {
+                    self.scoreElement.removeClass('animated flip');
                     self.score = scoresService.addMyScore(1);
                     self.challenge = challengesService.getRandomChallenge();
                     self.scoreElement.addClass('animated flip');
-                    self.challenge.animations.end(challengeElementId);
                     $scope.$apply();
                 };
 
-                self.animate = function(e) {
-                    if (self.challenge.isSuccess(e)) {
-                        self.scoreElement.removeClass('animated flip');
-                        self.challenge.animations.success('#challenge-element', e, self.goNextLevel);
-                    } else {
-                        self.challenge.animations.fail(challengeElementId, e, self.fail);
-                    }
-                };
 
                 self.challenge = challengesService.getRandomChallenge();
-
-                var challengeElement = angular.element(document.querySelector('#game-board'));
-                $ionicGesture.on('hold', self.animate, challengeElement);
-                $ionicGesture.on('doubletap', self.animate, challengeElement);
-                $ionicGesture.on('swipe', self.animate, challengeElement);
-
 
             }]);

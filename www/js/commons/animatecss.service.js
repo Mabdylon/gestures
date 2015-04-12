@@ -1,4 +1,4 @@
-gesturesApp.factory('commons.animatecss.service', ['$interval', function($interval) {
+gesturesApp.factory('commons.animatecss.service', ['$interval', '$timeout', function($interval, $timeout) {
 
     var self = this;
     var globalDuration = 1;
@@ -7,7 +7,7 @@ gesturesApp.factory('commons.animatecss.service', ['$interval', function($interv
         self.globalDuration = duration;
     };
 
-    var animate = function(id, className, duration, onComplete) {
+    var animate = function(source, className, duration, onComplete) {
         if(duration instanceof Function) {
             onComplete = duration;
             duration = self.globalDuration;
@@ -15,13 +15,20 @@ gesturesApp.factory('commons.animatecss.service', ['$interval', function($interv
         if(!duration) {
             duration = self.globalDuration;
         }
-        var element = angular.element(document.querySelectorAll(id));
+        var element;
+        if(typeof source === 'string') {
+            element = angular.element(document.querySelectorAll(source));
+        } else {
+            element = source;
+        }
         removeAllAnimationClasses(element);
         if(onComplete) {
             element.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', onComplete);
         }
         addDuration(element, duration);
-        element.addClass('animated '+className);
+//        $timeout(function() {
+            element.addClass('animated '+className);
+//        },0);
     };
 
     var addDuration = function(element, duration) {
@@ -37,7 +44,7 @@ gesturesApp.factory('commons.animatecss.service', ['$interval', function($interv
         }, interval);
     };
 
-    var removeAllAnimationClasses = function(element) {
+    var removeAllAnimationClasses = function(element, onComplete) {
       element.removeClass('animated bounce flash pulse rubberBand shake swing tada wobble');
       element.removeClass('bounceIn bounceInDown bounceInLeft bounceInRight bounceInUp');
       element.removeClass('bounceOut bounceOutDown bounceOutLeft bounceOutRight bounceOutUp');

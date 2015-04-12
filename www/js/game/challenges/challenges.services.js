@@ -32,7 +32,7 @@ gesturesApp.factory('game.challenges.challenges.services', ['game.challenges.arr
                 var challenge = _.find(self.challenges, function(challenge) {
                     return (challenge.id === challengeId);
                 });
-                return challenge;
+                return angular.copy(challenge);
             }
         };
 

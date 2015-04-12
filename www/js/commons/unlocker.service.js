@@ -33,14 +33,16 @@ gesturesApp.factory('commons.unlocker.service', ['commons.utils.service', 'game.
             },
             getNbUnlockedLevels: getNbUnlockedLevels,
             getPercentLevelUnlocked: function() {
-                var ratio = ((getNbUnlockedLevels() -1) / _.size(self.unlock.levels));
+                var ratio = ((getNbUnlockedLevels() - 1) / _.size(self.unlock.levels));
                 var percent = (ratio * 100).toFixed(0);
                 return percent;
             },
             unlockNextLevel: function(currentLevel) {
                 var nextLevel = currentLevel + 1;
-                self.unlock.levels[nextLevel].unlocked = true;
-                localStorageService.set(keyUnlockLevels, self.unlock.levels);
+                if (self.unlock.levels[nextLevel]) {
+                    self.unlock.levels[nextLevel].unlocked = true;
+                    localStorageService.set(keyUnlockLevels, self.unlock.levels);
+                }
             }
         };
 

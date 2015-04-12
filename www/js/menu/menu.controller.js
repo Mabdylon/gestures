@@ -16,10 +16,10 @@ gesturesApp.controller('menu.menu.controller',
                 };
 
                 this.animateOnSelect = function(mode, onComplete) {
-                    animatecssService.animate('.'+mode.class, 'fadeOut');
-                    animatecssService.animate('#'+mode.id, 'fadeOutRightBig', onComplete);
-                    animatecssService.animate('#'+titleId, 'rollOut');
-                    animatecssService.animate('#total-score', 'fadeOut');
+                    animatecssService.animate('.'+mode.class, 'fadeOut', 0.5);
+                    animatecssService.animate('#'+mode.id, 'fadeOutRightBig', 0.5, onComplete);
+                    animatecssService.animate('#'+titleId, 'rollOut', 0.5);
+                    animatecssService.animate('#total-score', 'fadeOut', 0.5);
                     $interval.cancel(attentionInterval);
                 };
 

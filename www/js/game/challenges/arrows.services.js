@@ -1,31 +1,17 @@
-gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$window',
-    function($ionicGesture, $window) {
+gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$window', 'commons.animatecss.service',
+    function($ionicGesture, $window, animatecssService) {
         var self = this;
 
         var defaultAnimations = {
-            onStart: function(id, event, onComplete) {
-                angular.element(document.querySelector(id));
+            start: function(element, event, onComplete) {
+                animatecssService.animate(element, 'zoomIn', 0.1, onComplete);
             },
-            success: function(id, event, onComplete) {
+            success: function(element, event, onComplete) {
                 var speedFactor = (event.gesture.velocityX + event.gesture.velocityY) / 5;
-                move(id)
-                        .scale(0)
-                        .duration(100)
-                        .end(onComplete);
+                animatecssService.animate(element, 'zoomOut', 0.1, onComplete);
             },
-            fail: function(id, event, onComplete) {
-                move(id)
-                        .set('color', 'red')
-                        .scale(20)
-                        .ease('out')
-                        .duration(500)
-                        .ease()
-                        .end(onComplete);
-            },
-            end: function(id, event, onComplete) {
-                move(id)
-                        .scale(1)
-                        .end();
+            fail: function(element, event, onComplete) {
+                animatecssService.animate(element, 'wobble', 0.5, onComplete);
             }
         };
 
@@ -35,10 +21,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                     id: 'arrows-graphic-white-up',
                     gesture: 'swipe',
                     condition: 'up',
-                    style: {
-                        color: 'white',
-                        'font-size': '128px'
-                    },
+                    style: "color: white;font-size: 128px;",
                     animations: defaultAnimations,
                     isSuccess: function(event) {
                         return (event.gesture.direction === 'up' && event.type === 'swipe');
@@ -49,10 +32,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                     id: 'arrows-graphic-white-down',
                     gesture: 'swipe',
                     condition: 'down',
-                    style: {
-                        color: 'white',
-                        'font-size': '128px'
-                    },
+                    style: "color: white;font-size: 128px;",
                     animations: defaultAnimations,
                     isSuccess: function(event) {
                         return (event.gesture.direction === 'down' && event.type === 'swipe');
@@ -63,10 +43,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                     id: 'arrows-graphic-white-left',
                     gesture: 'swipe',
                     condition: 'left',
-                    style: {
-                        color: 'white',
-                        'font-size': '128px'
-                    },
+                    style: "color: white;font-size: 128px;",
                     animations: defaultAnimations,
                     isSuccess: function(event) {
                         return (event.gesture.direction === 'left' && event.type === 'swipe');
@@ -77,10 +54,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
                     id: 'arrows-graphic-white-right',
                     gesture: 'swipe',
                     condition: 'right',
-                    style: {
-                        color: 'white',
-                        'font-size': '128px'
-                    },
+                    style: "color: white;font-size: 128px;",
                     animations: defaultAnimations,
                     isSuccess: function(event) {
                         return (event.gesture.direction === 'right' && event.type === 'swipe');
@@ -93,7 +67,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
         var graphicsBlack = angular.copy(self.values.graphicsWhite);
         for (var prop in graphicsBlack) {
             var challenge = graphicsBlack[prop];
-            challenge.style.color = 'black';
+            challenge.style = "color: black;font-size: 128px;";
             if (challenge.condition === 'right') {
                 challenge.id = 'arrows-graphic-black-right';
                 challenge.condition = 'left';
@@ -135,7 +109,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
         for (var prop in textsWhite) {
             var challenge = textsWhite[prop];
             delete challenge.icon;
-            challenge.style['font-size'] = '64px';
+            challenge.style = "color: white;font-size: 64px;";
             if (prop === 'up') {
                 challenge.id = 'arrows-texts-white-up';
                 challenge.text = 'Up';
@@ -163,7 +137,7 @@ gesturesApp.factory('game.challenges.arrows.services', ['$ionicGesture', '$windo
         for (var prop in textsBlack) {
             var challenge = textsBlack[prop];
             delete challenge.icon;
-            challenge.style['font-size'] = '64px';
+            challenge.style = "color: black;font-size: 64px;";
             if (prop === 'up') {
                 challenge.id = 'arrows-texts-black-up';
                 challenge.text = 'Up';
