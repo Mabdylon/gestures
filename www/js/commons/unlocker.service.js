@@ -33,7 +33,7 @@ gesturesApp.factory('commons.unlocker.service', ['commons.utils.service', 'game.
             },
             getNbUnlockedLevels: getNbUnlockedLevels,
             getPercentLevelUnlocked: function() {
-                var ratio = ((getNbUnlockedLevels() - 1) / _.size(self.unlock.levels));
+                var ratio = ((getNbUnlockedLevels() - 1) / (_.size(self.unlock.levels) - 1));
                 var percent = (ratio * 100).toFixed(0);
                 return percent;
             },
