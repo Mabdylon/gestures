@@ -1,4 +1,4 @@
-gesturesApp.directive('timer', ['$timeout', function($timeout) {
+gesturesApp.directive('timer', ['$timeout', '$interval', function($timeout, $interval) {
         return {
             restrict: 'EA',
             scope: {
@@ -6,41 +6,37 @@ gesturesApp.directive('timer', ['$timeout', function($timeout) {
                 onTimeout: '&onTimeout'
             },
             template: '<div id="timer"></div>',
-            controller: function($scope) {
-                var timerElement = document.getElementById('timer');
-                var initial = $scope.amount;
+            controller: function($scope, $element) {
 
-                var startTimeout = function() {
-                    return $timeout(function() {
-                        $scope.onTimeout();
-                    }, ($scope.amount * 1000)); 
-                };
-                var updateTime = function() {
-                    timerElement.innerHTML = $scope.amount.toFixed(1);
+                var startTimer = function() {
+                    return $interval(function() {
+                        if ($scope.amount <= 0) {
+                            $scope.onTimeout();
+                        }
+                        $scope.amount -= 1;
+                        $element.html($scope.amount);
+                    }, 1000, $scope.amount);
                 };
 
-                var timer = startTimeout($scope.amount);
-                var tween = TweenLite.to($scope, initial, {amount: 0, onUpdate: updateTime});
+                var interval = startTimer();
 
                 $scope.$on('timer.pause', function() {
-                    tween.pause();
-                    $timeout.cancel(timer);
+                    $interval.cancel(interval);
                 });
 
                 $scope.$on('timer.resume', function() {
-                    startTimeout($scope.amount);
-                    tween.resume();
+                    interval = startTimer();
                 });
 
                 $scope.$on('timer.stop', function() {
-                    $timeout.cancel(timer);
+                    $interval.cancel(interval);
                 });
 
                 $scope.$on(
                         "$destroy",
                         function(event) {
 
-                            $timeout.cancel(timer);
+                            $interval.cancel(interval);
 
                         }
                 );
