@@ -5,8 +5,9 @@ gesturesApp.directive('timer', ['$timeout', '$interval', function($timeout, $int
                 amount: '=amount',
                 onTimeout: '&onTimeout'
             },
-            template: '<div id="timer"></div>',
             controller: function($scope, $element) {
+
+                $element.html($scope.amount);
 
                 var startTimer = function() {
                     return $interval(function() {
@@ -15,7 +16,7 @@ gesturesApp.directive('timer', ['$timeout', '$interval', function($timeout, $int
                         }
                         $scope.amount -= 1;
                         $element.html($scope.amount);
-                    }, 1000, $scope.amount);
+                    }, 1000, ($scope.amount+1), false);
                 };
 
                 var interval = startTimer();
@@ -35,9 +36,7 @@ gesturesApp.directive('timer', ['$timeout', '$interval', function($timeout, $int
                 $scope.$on(
                         "$destroy",
                         function(event) {
-
                             $interval.cancel(interval);
-
                         }
                 );
 
