@@ -5,7 +5,8 @@
 // the 2nd parameter is an array of 'requires'
 var gesturesApp = angular.module('gestures', ['ionic','ngCordova', 'LocalStorageModule', 'ngAnimate']);
 
-gesturesApp.run(function($ionicPlatform) {
+gesturesApp.run(function($ionicPlatform, $anchorScroll) {
+
     $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
