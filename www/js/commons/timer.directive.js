@@ -11,10 +11,12 @@ gesturesApp.directive('timer', ['$timeout', '$interval', function($timeout, $int
 
                 var startTimer = function() {
                     return $interval(function() {
+                        $element.removeClass('translate');
                         if ($scope.amount <= 0) {
                             $scope.onTimeout();
                         }
                         $scope.amount -= 1;
+                        $element.addClass('translate');
                         $element.html($scope.amount);
                     }, 1000, ($scope.amount+1), false);
                 };
