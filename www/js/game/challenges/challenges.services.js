@@ -26,7 +26,8 @@ gesturesApp.factory('game.challenges.challenges.services', ['game.challenges.arr
             },
             getRandomChallenge: function() {
                 var indexRandomChallenge = _.random(0, self.challenges.length - 1);
-                return self.challenges[indexRandomChallenge];
+                var challenge = self.challenges[indexRandomChallenge];
+                return angular.copy(challenge);
             },
             getChallengeById: function(challengeId) {
                 var challenge = _.find(self.challenges, function(challenge) {
