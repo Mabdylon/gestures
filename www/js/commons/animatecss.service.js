@@ -1,3 +1,5 @@
+"use strict";
+
 gesturesApp.factory('commons.animatecss.service', ['$interval', '$timeout', function($interval, $timeout) {
 
     var self = this;

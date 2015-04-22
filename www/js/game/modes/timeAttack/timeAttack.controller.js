@@ -1,3 +1,5 @@
+"use strict";
+
 gesturesApp.controller('game.modes.timeAttack.timeAttack.controller',
         ['$window', 'game.modes.modes.service', '$state', 'game.challenges.challenges.services', '$ionicGesture', '$scope', 'commons.scores.service',
             function($window, modesService, $state, challengesService, $ionicGesture, $scope, scoresService) {

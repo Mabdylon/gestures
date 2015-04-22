@@ -1,3 +1,5 @@
+"use strict";
+
 gesturesApp.factory('game.modes.modes.service', function() {
 
     var self = this;

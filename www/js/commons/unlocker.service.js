@@ -1,3 +1,5 @@
+"use strict";
+
 gesturesApp.factory('commons.unlocker.service', ['commons.utils.service', 'game.levels.levels.service', 'localStorageService',
     function(utilsService, levelsService, localStorageService) {
 

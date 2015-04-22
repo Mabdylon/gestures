@@ -1,3 +1,5 @@
+"use strict";
+
 gesturesApp.directive('gsChallenges', ['$ionicGesture', function($ionicGesture) {
 
         return {

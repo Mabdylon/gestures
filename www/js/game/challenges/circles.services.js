@@ -1,3 +1,5 @@
+"use strict";
+
 gesturesApp.factory('game.challenges.circles.services', ['$ionicGesture', '$window', 'commons.animatecss.service',
     function($ionicGesture, $window, animatecssService) {
 

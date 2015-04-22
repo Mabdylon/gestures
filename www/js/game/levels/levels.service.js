@@ -1,3 +1,5 @@
+"use strict";
+
 gesturesApp.factory('game.levels.levels.service', [
     function() {
 
@@ -8,7 +10,7 @@ gesturesApp.factory('game.levels.levels.service', [
             {
                 id: 1,
                 name: 'The begining',
-                hints: 'Hints : Swipe the arrow !',
+                hints: 'Swipe the arrow !',
                 color: 'dark',
                 challenges: [
                     'arrows-graphic-white-up',
@@ -24,7 +26,7 @@ gesturesApp.factory('game.levels.levels.service', [
             {
                 id: 2,
                 name: 'Reverse',
-                hints: 'Hints : Let\'s swipe to the opposite !',
+                hints: 'Let\'s swipe to the opposite !',
                 color: 'positive',
                 challenges: [
                     'arrows-graphic-black-up',
@@ -40,7 +42,7 @@ gesturesApp.factory('game.levels.levels.service', [
             {
                 id: 3,
                 name: 'The Mix',
-                hints: 'Hints : What about mixin\' it up ?',
+                hints: 'What about mixin\' it up ?',
                 color: 'calm',
                 challenges: [
                     'arrows-graphic-white-up',
@@ -60,7 +62,7 @@ gesturesApp.factory('game.levels.levels.service', [
             {
                 id: 4,
                 name: 'Arrow Mix',
-                hints: 'Hints : Think and swipe',
+                hints: 'Think and swipe',
                 color: 'balanced',
                 challenges: [
                     'arrows-graphic-white-up',
@@ -80,7 +82,7 @@ gesturesApp.factory('game.levels.levels.service', [
             {
                 id: 5,
                 name: 'Better, Harder',
-                hints: 'Hints : Think, swipe and be fast !',
+                hints: 'Think, swipe and be fast !',
                 color: 'energized',
                 challenges: [
                     'arrows-graphic-white-up',
@@ -107,7 +109,7 @@ gesturesApp.factory('game.levels.levels.service', [
             {
                 id: 6,
                 name: 'Enough arrows',
-                hints: 'Hints : Read and swipe !',
+                hints: 'Read and swipe !',
                 color: 'assertive',
                 challenges: [
                     'arrows-texts-white-up',
@@ -123,7 +125,7 @@ gesturesApp.factory('game.levels.levels.service', [
             {
                 id: 7,
                 name: 'Reverse text',
-                hints: 'Hints : Read and swipe to the opposite !',
+                hints: 'Read and swipe to the opposite !',
                 color: 'royal',
                 challenges: [
                     'arrows-texts-black-up',
@@ -139,7 +141,7 @@ gesturesApp.factory('game.levels.levels.service', [
             {
                 id: 8,
                 name: 'The text Mix',
-                hints: 'Hints : Read, think and swipe !',
+                hints: 'Read, think and swipe !',
                 color: 'dark',
                 challenges: [
                     'arrows-texts-white-up',
@@ -155,7 +157,7 @@ gesturesApp.factory('game.levels.levels.service', [
             {
                 id: 9,
                 name: 'The Mega Mix',
-                hints: 'Hints : Arrows are back !',
+                hints: 'Arrows are back !',
                 color: 'positive',
                 challenges: [
                     'arrows-texts-white-up',
@@ -182,7 +184,7 @@ gesturesApp.factory('game.levels.levels.service', [
             {
                 id: 10,
                 name: 'The Giga Mix',
-                hints: 'Hints : Oh come on you don\'t need hints anymore !',
+                hints: 'Oh come on you don\'t need hints anymore !',
                 color: 'calm',
                 challenges: [
                     'arrows-graphic-white-up',
@@ -228,7 +230,7 @@ gesturesApp.factory('game.levels.levels.service', [
              {
                 id: 11,
                 name: 'New : the circle !',
-                hints: 'Hints : It\' new, its fresh, press it !',
+                hints: 'It\' new, its fresh, press or double press it !',
                 color: 'balanced',
                 challenges: [
                     'circle-hold-white',

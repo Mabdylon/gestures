@@ -1,3 +1,5 @@
+"use strict";
+
 gesturesApp.factory('commons.utils.service', ['localStorageService',
     function(localStorageService) {
 

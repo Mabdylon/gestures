@@ -1,3 +1,5 @@
+"use strict";
+
 gesturesApp.controller('game.gameOver.gameOver.controller', ['$state', 'commons.scores.service', '$stateParams', 
     function($state, scoresService, $stateParams){
 

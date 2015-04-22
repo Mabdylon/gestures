@@ -1,3 +1,5 @@
+"use strict";
+
 gesturesApp.controller('game.levels.levels.controller',
         ['$state', 'game.levels.levels.service', 'game.modes.modes.service', 'commons.unlocker.service', '$anchorScroll', '$location',
             function($state, levelsService, modesService, unlockerService, $anchorScroll, $location) {

@@ -1,3 +1,5 @@
+"use strict";
+
 gesturesApp.directive('timer', ['$timeout', '$interval', function($timeout, $interval) {
         return {
             restrict: 'EA',

@@ -1,3 +1,5 @@
+"use strict";
+
 gesturesApp.factory('game.challenges.challenges.services', ['game.challenges.arrows.services', 'game.challenges.circles.services',
     function(arrowsService, circlesService) {
 
@@ -9,7 +11,7 @@ gesturesApp.factory('game.challenges.challenges.services', ['game.challenges.arr
         ];
 
         for(var typeProp in arrowsValues) {
-            typeChallenge = arrowsValues[typeProp];
+            var typeChallenge = arrowsValues[typeProp];
             for(var challengeprop in typeChallenge) {
                 var challenge = typeChallenge[challengeprop];
                 self.challenges.push(challenge);
