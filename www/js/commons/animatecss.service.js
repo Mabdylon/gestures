@@ -25,12 +25,19 @@ gesturesApp.factory('commons.animatecss.service', ['$interval', '$timeout', func
         }
         removeAllAnimationClasses(element);
         if(onComplete) {
-            element.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', onComplete);
+            onAnimationEnd(element, onComplete);
         }
+
+        onAnimationEnd(element, function() {
+               removeAllAnimationClasses(element);
+        });
+
         addDuration(element, duration);
-//        $timeout(function() {
-            element.addClass('animated '+className);
-//        },0);
+        element.addClass('animated '+className);
+    };
+
+    var onAnimationEnd = function(element, onComplete) {
+        element.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', onComplete);
     };
 
     var addDuration = function(element, duration) {
