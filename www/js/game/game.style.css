@@ -50,6 +50,10 @@ i.ion-close-round {
     top : 100px;
 }
 
+.has-header {
+    bottom : 100px;
+}
+
 .bar-header {
     height: 100px;
 }
@@ -58,9 +62,10 @@ i.ion-close-round {
     height: 100px;
 }
 
-.platform-android .bar .title {
-    top: 26px;
-    font-size: 56px;
+.title {
+    font-size: 56px !important;
+    height: 100% !important;
+    line-height: 100px !important;
 }
 
 .center{

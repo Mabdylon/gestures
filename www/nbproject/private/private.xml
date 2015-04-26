@@ -3,26 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/levels/levels.controller.js</file>
             <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/game.controller.js</file>
             <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/modes/story/story.controller.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/commons/scores.service.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/commons/utils.service.js</file>
+            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/game.style.css</file>
             <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/levels/levels.service.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/challenges/circles.services.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/levels/levels.view.html</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/config.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/app.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/levels/levels.controller.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/challenges/arrows.services.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/routes.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/gameOver/gameOver.controller.js</file>
             <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/challenges/challenges.services.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/modes/timeAttack/timeAttack.controller.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/commons/unlocker.service.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/commons/animatecss.service.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/commons/timer.directive.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/challenges/challenges.directive.js</file>
-            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/modes/modes.services.js</file>
+            <file>file:/C:/Dropbox/Documents/Developpement/Javascript/Client/Gestures/gestures/www/js/game/modes/story/hints/hints.modal.html</file>
         </group>
     </open-files>
 </project-private>
