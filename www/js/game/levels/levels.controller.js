@@ -1,8 +1,8 @@
 "use strict";
 
 gesturesApp.controller('game.levels.levels.controller',
-        ['$state', 'game.levels.levels.service', 'game.modes.modes.service', 'commons.unlocker.service', '$anchorScroll', '$location',
-            function($state, levelsService, modesService, unlockerService, $anchorScroll, $location) {
+        ['$state', 'game.levels.levels.service', 'game.modes.modes.service', 'commons.unlocker.service',
+            function($state, levelsService, modesService, unlockerService) {
 
                 var self = this;
                 modesService.setCurrentMode($state.current.name);
@@ -10,18 +10,17 @@ gesturesApp.controller('game.levels.levels.controller',
                 this.unlockedLevels = unlockerService.getUnlockedLevels();
                 this.progress = unlockerService.getPercentLevelUnlocked();
                 this.levels = levelsService.getList();
-                this.currentLevel = unlockerService.getCurrentLevel();
+                this.currentLevel = levelsService.getLevelById(unlockerService.getCurrentLevelId());
 
                 this.isCurrentLevel = function(level){
                     return (level.id === self.currentLevel.id);
                 };
 
-                var gotoAnchor = function(id) {
-                    if ($location.hash() !== id) {
-                        $location.hash(id);
-                    } else {
-                        $anchorScroll();
-                    }
+                this.scrollToCurrentLevel = function() {
+                    var offset = 150;
+                    var scroll = (self.currentLevel.number * 84);
+                    var diff = scroll - offset;
+                    return (diff > 0 ? diff : 0);
                 };
 
                 this.goToLevel = function(level) {
@@ -29,7 +28,5 @@ gesturesApp.controller('game.levels.levels.controller',
                         level: level.id
                     });
                 };
-
-                gotoAnchor(self.currentLevel.id);
 
             }]);

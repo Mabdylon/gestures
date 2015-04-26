@@ -4,6 +4,13 @@ gesturesApp.controller('game.modes.story.story.controller',
         ['game.modes.modes.service', '$state', 'game.challenges.challenges.services', '$ionicGesture', '$scope', 'commons.scores.service', 'game.levels.levels.service', '$stateParams', 'commons.unlocker.service', 'commons.animatecss.service', '$timeout', '$ionicModal',
             function(modesService, $state, challengesService, $ionicGesture, $scope, scoresService, levelsService, $stateParams, unlockerService, animationcssService, $timeout, $ionicModal) {
 
+                $ionicModal.fromTemplateUrl('./js/game/modes/story/hints/hints.modal.html', {
+                    scope: $scope
+                }).then(function(modal) {
+                    self.modal = modal;
+                    self.modal.show();
+                });
+
                 var self = this;
                 self.level = levelsService.getLevelById($stateParams.level);
                 self.challengesId = self.level.challenges;
@@ -38,13 +45,5 @@ gesturesApp.controller('game.modes.story.story.controller',
                 self.challenge = challengesService.getChallengeById(self.challengesId[self.step]);
 
                 self.computeProgress();
-
-                $ionicModal.fromTemplateUrl('./js/game/modes/story/hints/hints.modal.html', {
-                    scope: $scope,
-                    animation: 'slide-in-up'
-                }).then(function(modal) {
-                    self.modal = modal;
-                    self.modal.show();
-                });
 
             }]);

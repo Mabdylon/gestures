@@ -3,8 +3,8 @@
     <i class="button button-clear icon ion-close-round" ng-click="gameCtrl.exit()"></i>
 </div>
 
-<ion-content class="has-header fullscreen-board-bottom animated fadeInLeftBig" ng-class="[levelsCtrl.theme.background.color]" 
-             id="game-board" scroll="true">
+<ion-content class="has-header fullscreen-board-bottom light-bg animated fadeInLeftBig" ng-class="[levelsCtrl.theme.background.color]"
+             id="game-board" scroll="true" scrollbar-y="false" scrollbar-x="false" start-y="levelsCtrl.scrollToCurrentLevel()">
 
     <button ng-repeat="level in levelsCtrl.levels" ng-disabled="!levelsCtrl.unlockedLevels[level.id].unlocked"
             ng-class="{'ion-android-lock': !levelsCtrl.unlockedLevels[level.id].unlocked,
@@ -12,7 +12,7 @@
             id="{{level.id}}"
             class="icon-left button button-block button-small-font-size button-{{level.color}} button-margin-top-down animated fadeIn"
             ng-click="levelsCtrl.goToLevel(level)">
-        {{level.name}}
+        {{level.name}} 
     </button>
 
 </ion-content>

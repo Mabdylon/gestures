@@ -4,7 +4,7 @@
     <i class="button button-clear icon ion-close-round" ng-click="gameCtrl.exit()"></i>
 </div>
 
-<ion-content class="has-header fullscreen-board {{storyCtrl.level.color}}-bg animated zoomIn" id="game-board" scroll="false">
+<ion-content has-bouncing="false" class="has-header fullscreen-board {{storyCtrl.level.color}}-bg animated zoomIn" id="game-board" scroll="false">
     <gs-challenges challenge="storyCtrl.challenge" on-success="storyCtrl.goNextLevel()" on-fail="storyCtrl.fail()"
                    class="icon fullscreen-board-challenge center">
     </gs-challenges>

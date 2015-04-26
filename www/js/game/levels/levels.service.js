@@ -9,6 +9,7 @@ gesturesApp.factory('game.levels.levels.service', [
         list: [
             {
                 id: 1,
+                number: 1,
                 name: 'The begining',
                 hints: 'Swipe the arrow !',
                 color: 'dark',
@@ -25,6 +26,7 @@ gesturesApp.factory('game.levels.levels.service', [
             },
             {
                 id: 2,
+                number: 2,
                 name: 'Reverse',
                 hints: 'Let\'s swipe to the opposite !',
                 color: 'positive',
@@ -41,6 +43,7 @@ gesturesApp.factory('game.levels.levels.service', [
             },
             {
                 id: 3,
+                number: 3,
                 name: 'The Mix',
                 hints: 'What about mixin\' it up ?',
                 color: 'calm',
@@ -61,6 +64,7 @@ gesturesApp.factory('game.levels.levels.service', [
             },
             {
                 id: 4,
+                number: 4,
                 name: 'Arrow Mix',
                 hints: 'Think and swipe',
                 color: 'balanced',
@@ -81,6 +85,7 @@ gesturesApp.factory('game.levels.levels.service', [
             },
             {
                 id: 5,
+                number: 5,
                 name: 'Better, Harder',
                 hints: 'Think, swipe and be fast !',
                 color: 'energized',
@@ -108,6 +113,7 @@ gesturesApp.factory('game.levels.levels.service', [
             },
             {
                 id: 6,
+                number: 6,
                 name: 'Enough arrows',
                 hints: 'Read and swipe !',
                 color: 'assertive',
@@ -124,6 +130,7 @@ gesturesApp.factory('game.levels.levels.service', [
             },
             {
                 id: 7,
+                number: 7,
                 name: 'Reverse text',
                 hints: 'Read and swipe to the opposite !',
                 color: 'royal',
@@ -140,6 +147,7 @@ gesturesApp.factory('game.levels.levels.service', [
             },
             {
                 id: 8,
+                number: 8,
                 name: 'The text Mix',
                 hints: 'Read, think and swipe !',
                 color: 'dark',
@@ -156,6 +164,7 @@ gesturesApp.factory('game.levels.levels.service', [
             },
             {
                 id: 9,
+                number: 9,
                 name: 'The Mega Mix',
                 hints: 'Arrows are back !',
                 color: 'positive',
@@ -183,6 +192,7 @@ gesturesApp.factory('game.levels.levels.service', [
             },
             {
                 id: 10,
+                number: 10,
                 name: 'The Giga Mix',
                 hints: 'Oh come on you don\'t need hints anymore !',
                 color: 'calm',
@@ -229,6 +239,7 @@ gesturesApp.factory('game.levels.levels.service', [
             },
              {
                 id: 11,
+                number: 11,
                 name: 'New : the circle !',
                 hints: 'It\' new, its fresh, press or double press it !',
                 color: 'balanced',
@@ -250,7 +261,11 @@ gesturesApp.factory('game.levels.levels.service', [
         },
         getLevelById: function(levelId) {
             var level = _.find(self.levels.list, function(level) {
-                return (level.id.toString() === levelId);
+                if(angular.isString(levelId)) {
+                    return (level.id.toString() === levelId);
+                } else {
+                    return (level.id === levelId);
+                }
             });
             return level;
         }

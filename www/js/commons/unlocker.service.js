@@ -25,11 +25,11 @@ gesturesApp.factory('commons.unlocker.service', ['commons.utils.service', 'game.
             }
         };
 
-        var getCurrentLevel = function() {
+        var getCurrentLevelId = function() {
             var currentLevel = _.findLast(self.unlock.levels, function(level) {
                 return level.unlocked === true;
             });
-            return currentLevel;
+            return currentLevel.id;
         };
 
         self.unlock = {
@@ -55,7 +55,7 @@ gesturesApp.factory('commons.unlocker.service', ['commons.utils.service', 'game.
             isUnlockedLevel: function(id) {
                 return self.levels[id].unlocked;
             },
-            getCurrentLevel: getCurrentLevel,
+            getCurrentLevelId: getCurrentLevelId,
             getNbUnlockedLevels: getNbUnlockedLevels,
             getPercentLevelUnlocked: getPercentLevelUnlocked,
             unlockNextLevel: unlockNextLevel
