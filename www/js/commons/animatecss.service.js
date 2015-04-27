@@ -26,14 +26,14 @@ gesturesApp.factory('commons.animatecss.service', ['$interval', '$timeout', func
         removeAllAnimationClasses(element);
         if(onComplete) {
             onAnimationEnd(element, onComplete);
-        }
+        } 
+
+        addDuration(element, duration);
+        element.addClass('animated '+className);
 
         onAnimationEnd(element, function() {
                removeAllAnimationClasses(element);
         });
-
-        addDuration(element, duration);
-        element.addClass('animated '+className);
     };
 
     var onAnimationEnd = function(element, onComplete) {
@@ -66,6 +66,7 @@ gesturesApp.factory('commons.animatecss.service', ['$interval', '$timeout', func
       element.removeClass('hinge rollIn rollOut zoomIn zoomInDown zoomInLeft zoomInRight zoomInUp');
       element.removeClass('zoomOut zoomOutDown zoomOutLeft zoomOutRight zoomOutUp slideInDown slideInLeft');
       element.removeClass('slideInRight slideInUp slideOutDown slideOutLeft slideOutRight slideOutUp');
+      element.addClass('translate');
     };
 
     return {

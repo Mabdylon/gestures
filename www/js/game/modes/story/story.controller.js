@@ -1,17 +1,18 @@
 "use strict";
 
 gesturesApp.controller('game.modes.story.story.controller',
-        ['game.modes.modes.service', '$state', 'game.challenges.challenges.services', '$ionicGesture', '$scope', 'commons.scores.service', 'game.levels.levels.service', '$stateParams', 'commons.unlocker.service', 'commons.animatecss.service', '$timeout', '$ionicModal',
-            function(modesService, $state, challengesService, $ionicGesture, $scope, scoresService, levelsService, $stateParams, unlockerService, animationcssService, $timeout, $ionicModal) {
-
-                $ionicModal.fromTemplateUrl('./js/game/modes/story/hints/hints.modal.html', {
-                    scope: $scope
-                }).then(function(modal) {
-                    self.modal = modal;
-                    self.modal.show();
-                });
+        ['game.modes.modes.service', '$state', 'game.challenges.challenges.services', '$ionicGesture', '$scope', 'commons.scores.service', 'game.levels.levels.service', '$stateParams', 'commons.unlocker.service', 'commons.animatecss.service', '$timeout', '$ionicPopover',
+            function(modesService, $state, challengesService, $ionicGesture, $scope, scoresService, levelsService, $stateParams, unlockerService, animationcssService, $timeout, $ionicPopover) {
 
                 var self = this;
+
+                $ionicPopover.fromTemplateUrl('./js/game/modes/story/hints/hints.modal.html', {
+                    scope: $scope
+                }).then(function(popover) {
+                    self.popover = popover;
+                    self.popover.show();
+                });
+
                 self.level = levelsService.getLevelById($stateParams.level);
                 self.challengesId = self.level.challenges;
                 self.nbChallenge = self.challengesId.length;

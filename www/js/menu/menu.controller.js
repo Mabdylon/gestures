@@ -17,9 +17,9 @@ gesturesApp.controller('menu.menu.controller',
 
                 this.animateOnSelect = function(mode, onComplete) {
                     animatecssService.animate('.'+mode.class, 'fadeOut', 0.5);
-                    animatecssService.animate('#'+mode.id, 'fadeOutRightBig', 0.5, onComplete);
+                    animatecssService.animate('#'+mode.id, 'fadeOutRightBig', 0.5);
                     animatecssService.animate('#'+titleId, 'rollOut', 0.5);
-                    animatecssService.animate('#total-score', 'fadeOut', 0.5);
+                    animatecssService.animate('#total-score', 'fadeOut', 0.4, onComplete);
                     $interval.cancel(attentionInterval);
                 };
 

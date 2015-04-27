@@ -34,38 +34,8 @@ fullscreen-board-game-over {
     top: 0px;
 }
 
-i.ion-ios-pause {
-    width: 25%;
-    text-align: center;
-    border: none;
-}
-
-i.ion-close-round {
-    width: 25%;
-    text-align: center;
-    border: none;
-}
-
-.has-header {
-    top : 100px;
-}
-
-.has-footer {
-    bottom : 100px;
-}
-
-.bar-header {
-    height: 100px;
-}
-
-.bar-footer {
-    height: 100px;
-}
-
 .title {
     font-size: 56px !important;
-    height: 100% !important;
-    line-height: 100px !important;
 }
 
 .center{
