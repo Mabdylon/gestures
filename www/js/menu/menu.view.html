@@ -3,8 +3,8 @@
 </div>
 
 
-<ion-content class="has-header has-footer padding light-bg" scroll="false">
-<button id="{{mode.id}}" ng-repeat="mode in menuCtrl.modes" class="button button-block padding button-{{mode.color}} animated fadeInLeftBig" ng-class="[mode.class]"
+<ion-content class="has-header has-footer light-bg padding-horizontal-large" scroll="false">
+<button id="{{mode.id}}" ng-repeat="mode in menuCtrl.modes" class="button button-block button-{{mode.color}} animated fadeInLeftBig" ng-class="[mode.class]"
         ng-click="menuCtrl.goToMode(mode)">{{mode.name}}</button>
 </ion-content>
 

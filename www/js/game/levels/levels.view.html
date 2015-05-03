@@ -3,7 +3,7 @@
     <i class="button button-clear icon ion-close-round" ng-click="gameCtrl.exit()"></i>
 </div>
 
-<ion-content class="has-header padding light-bg animated fadeInLeftBig" ng-class="[levelsCtrl.theme.background.color]"
+<ion-content class="has-header padding-horizontal-large light-bg animated fadeInLeftBig" ng-class="[levelsCtrl.theme.background.color]"
              id="game-board" scroll="true" scrollbar-y="false" scrollbar-x="false" start-y="levelsCtrl.scrollToCurrentLevel()">
 
     <button ng-repeat="level in levelsCtrl.levels" ng-disabled="!levelsCtrl.unlockedLevels[level.id].unlocked"

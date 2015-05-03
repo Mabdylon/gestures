@@ -6486,17 +6486,17 @@ progress {
   position: relative;
   display: inline-block;
   margin: 0;
-  padding: 0 12px;
-  min-width: 81px;
-  min-height: 47px;
+  padding: 0 15px;
+  min-width: 85px;
+  min-height: 80px;
   border-width: 1px;
   border-style: solid;
   border-radius: 2px;
   vertical-align: top;
   text-align: center;
   text-overflow: ellipsis;
-  font-size: 45px;
-  line-height: 42px;
+  font-size: 40px;
+  line-height: 75px;
   cursor: pointer; }
   .button:hover {
     color: #444;
@@ -6520,7 +6520,7 @@ progress {
     padding: 0 0 1px 0;
     vertical-align: inherit;
     font-size: 24px;
-    line-height: 41px;
+    line-height: 74px;
     pointer-events: none; }
   .button.icon-left:before {
     float: left;
@@ -6818,7 +6818,7 @@ progress {
   -webkit-transition: opacity .1s;
   transition: opacity .1s;
   padding: 0 6px;
-  max-height: 42px;
+  max-height: 75px;
   border-color: transparent;
   background: none;
   box-shadow: none; }
