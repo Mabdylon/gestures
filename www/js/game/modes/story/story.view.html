@@ -1,12 +1,11 @@
 <div class="bar bar-header animated rotateInDownLeft bar-{{storyCtrl.level.color}}">
-    <i class="button button-clear icon ion-ios-pause" ng-click="gameCtrl.pause()"></i>
+    
     <h1 class="title" id="app-score">{{storyCtrl.progress}}%</h1>
-    <i class="button button-clear icon ion-close-round" ng-click="gameCtrl.exit()"></i>
+    <gs-back-button></gs-back-button>
 </div>
 
-<ion-content has-bouncing="false" class="has-header fullscreen-board {{storyCtrl.level.color}}-bg animated zoomIn" id="game-board" scroll="false">
-    <gs-challenges challenge="storyCtrl.challenge" on-success="storyCtrl.goNextLevel()" on-fail="storyCtrl.fail()"
-                   class="icon fullscreen-board-challenge center">
+<ion-content class="has-header has-footer fill-content {{storyCtrl.level.color}}-bg animated zoomIn" scroll="false">
+    <gs-challenges challenge="storyCtrl.challenge" on-success="storyCtrl.goNextLevel()" on-fail="storyCtrl.fail()">
     </gs-challenges>
 </ion-content>
 

@@ -9,7 +9,8 @@ gesturesApp.directive('gsChallenges', ['$ionicGesture', function($ionicGesture) 
                 onSuccess: '&',
                 onFail: '&'
             },
-            template: '',
+            replace: true,
+            template: '<div class="icon fill-content center"><div>',
             link: function($scope, $element, $attrs) {
 
                 var checkEvent = function(e) {

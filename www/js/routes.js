@@ -16,7 +16,8 @@ gesturesApp.config(function($stateProvider, $urlRouterProvider) {
             .state('game', {
                 url: '/game',
                 controller: 'game.game.controller as gameCtrl',
-                template: '<ui-view></ui-view>'
+                template: '<ui-view></ui-view>',
+                abstract: true
             })
 
             .state('game.timeAttack', {
